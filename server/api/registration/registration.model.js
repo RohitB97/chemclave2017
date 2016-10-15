@@ -3,13 +3,8 @@
 import mongoose from 'mongoose';
 
 var RegistrationSchema = new mongoose.Schema({
-  name: String,
-  college: String,
-  contact_number: Number,
-  email: {type:String, lowercase:true},
-  password: String,
-  events: Array,
-  user_id: String
+  user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+  event: String
 
 },{timestamps:true});
 

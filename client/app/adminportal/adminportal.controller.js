@@ -3,16 +3,15 @@
 (function(){
 
 class AdminportalComponent {
-  constructor() {
-    this.message = 'Hello';
+  constructor($scope) {
+    $scope.show_options = 'true';
   }
 }
 
 angular.module('chemclaveApp')
   .component('adminportal', {
     templateUrl: 'app/adminportal/adminportal.html',
-    controller: AdminportalComponent,
-    controllerAs: 'adminportalCtrl'
+    controller: AdminportalComponent
   });
 
 })();
