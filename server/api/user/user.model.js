@@ -12,8 +12,8 @@ var UserSchema = new Schema({
   college: String,
   city: String,
   mobile: Number,
-  accomodation: Boolean,
-  events: [{type: String, ref:'Registration'}], 
+  accomodation_status: Boolean,
+  events: Array, 
   email: {
     type: String,
     lowercase: true,
