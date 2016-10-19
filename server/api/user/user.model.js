@@ -12,7 +12,8 @@ var UserSchema = new Schema({
   college: String,
   city: String,
   mobile: Number,
-  accomodation_status: Boolean,
+  accomodation_status: String,
+  status_check: Boolean,
   events: Array, 
   email: {
     type: String,

@@ -13,9 +13,18 @@ class SignupController {
   register(form) {
     this.submitted = true;
 
+    if(this.user.accomodation_status){
+      this.user.status_check: false;
+    }
+
     if (form.$valid) {
       this.Auth.createUser({
           name: this.user.name,
+          city: this.user.city,
+          college: this.user.college,
+          mobile: this.user.mobile,
+          accomodation_status: this.user.accomodation_status,
+          status_check: this.user.status_check,
           email: this.user.email,
           password: this.user.password
         })

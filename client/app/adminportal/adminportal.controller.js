@@ -4,7 +4,28 @@
 
 class AdminportalComponent {
   constructor($scope) {
-    $scope.show_options = 'true';
+    $scope.show_options = false;
+    
+    $scope.display_options = function(){
+    	if($scope.show_options==false)
+    	$scope.show_options = true;
+
+       else
+       	$scope.show_options = false;
+    };
+
+    $scope.user_list = [
+      {name:'User 1',accomodation_status:'Pending',accepted:false},
+      {name:'User 2',accomodation_status:'Approved',accepted:true},
+      {name:'User 3',accomodation_status:'Approved',accepted:true},
+      {name:'User 4',accomodation_status:'Pending',accepted:false},
+      {name:'User 5',accomodation_status:'Pending',accepted:false},
+      {name:'User 6',accomodation_status:'Approved',accepted:true}
+    ];
+
+    $scope.option_click = function(option,id){
+       
+    }
   }
 }
 

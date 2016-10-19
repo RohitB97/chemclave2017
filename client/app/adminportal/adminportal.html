@@ -8,50 +8,24 @@
     <h3>Finance Portal</h3>
      <div class="container">
     <ul class="list-group">
-      <li class="list-group-item list-group-item-success">
+      <li ng-repeat="user in user_list" class="list-group-item list-group-item portal_panel">
       <span class="badge"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></span>
        <p>
-         User 1
-         <span class="label label-success status_pos">Approved</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <span class="glyphicon glyphicon-pencil option" aria-hidden="true"></span>
+         {{user.name}}
+         <span ng-show="user.accepted" class="label label-success status_pos">{{user.accomodation_status}}</span>
+         <span ng-show="!user.accepted" class="label label-primary status_pos">{{user.accomodation_status}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <span ng-click="display_options()" class="glyphicon glyphicon-pencil option" aria-hidden="true"></span>
        </p>
-       <p ng-hide='{{show_options}}'>
+       <p ng-show="show_options">
         <span class="option_pos">
-          <span class="label label-success option">Approve</span>&nbsp;&nbsp;
-          <span class="label label-primary option">Pending</span>&nbsp;&nbsp;
-          <span class="label label-danger option">Reject</span>&nbsp;&nbsp;
+          <span ng-click="option_click('approved',user.name)" class="label label-success option">Approve</span>&nbsp;&nbsp;
+          <span ng-click="option_click()" class="label label-danger option">Reject</span>&nbsp;&nbsp;
+          <!--<span class="label label-danger option">Reject</span>&nbsp;&nbsp;-->
         </span>  
        </p>
       </li>
-      
-      <li class="list-group-item list-group-item-info">
-      <span class="badge"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></span>
-      <p>
-         User 1
-         <span class="label label-success status_pos">Approved</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <span class="glyphicon glyphicon-pencil option" aria-hidden="true"></span>
-       </p>
-      </li>
-      
-      <li class="list-group-item list-group-item-warning">
-      <span class="badge"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></span>
-      <p>
-         User 1
-         <span class="label label-primary status_pos">Pending</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <span class="glyphicon glyphicon-pencil option" aria-hidden="true"></span>
-       </p>
-      </li>
-      
-      <li class="list-group-item list-group-item-danger">
-      <span class="badge"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></span>
-      <p>
-         User 1
-         <span class="label label-danger status_pos">Rejected</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <span class="glyphicon glyphicon-pencil option" aria-hidden="true"></span>
-       </p>
-      </li>
     </ul>
-    </div>
+   </div>
   </div>
   
   <div role="tabpanel" id="events" class="tab-pane fade">
