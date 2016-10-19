@@ -15,12 +15,12 @@ class AdminportalComponent {
     };
 
     $scope.user_list = [
-      {name:'User 1',accomodation_status:'Pending',accepted:false},
-      {name:'User 2',accomodation_status:'Approved',accepted:true},
-      {name:'User 3',accomodation_status:'Approved',accepted:true},
-      {name:'User 4',accomodation_status:'Pending',accepted:false},
-      {name:'User 5',accomodation_status:'Pending',accepted:false},
-      {name:'User 6',accomodation_status:'Approved',accepted:true}
+      {name:'User 1',accomodation_status:'Pending',accepted:false,mobile:9988776655},
+      {name:'User 2',accomodation_status:'Approved',accepted:true,mobile:9988776655},
+      {name:'User 3',accomodation_status:'Approved',accepted:true,mobile:9988776655},
+      {name:'User 4',accomodation_status:'Pending',accepted:false,mobile:9988776655},
+      {name:'User 5',accomodation_status:'Pending',accepted:false,mobile:9988776655},
+      {name:'User 6',accomodation_status:'Approved',accepted:true,mobile:9988776655}
     ];
 
     $scope.option_click = function(option,id){

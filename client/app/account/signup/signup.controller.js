@@ -14,7 +14,7 @@ class SignupController {
     this.submitted = true;
 
     if(this.user.accomodation_status){
-      this.user.status_check: false;
+      this.user.status_check=false;
     }
 
     if (form.$valid) {
