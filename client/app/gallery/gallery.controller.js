@@ -3,8 +3,19 @@
 (function(){
 
 class GalleryComponent {
-  constructor() {
-    this.message = 'Hello';
+  constructor($scope) {
+    $scope.images = [
+    {src:"../../assets/images/sample.jpg"},
+    {src:"../../assets/images/sample.jpg"},
+    {src:"../../assets/images/sample.jpg"},
+    {src:"../../assets/images/sample.jpg"},
+    {src:"../../assets/images/sample.jpg"},
+    {src:"../../assets/images/sample.jpg"},
+    {src:"../../assets/images/sample.jpg"},
+    {src:"../../assets/images/sample.jpg"},
+    {src:"../../assets/images/sample.jpg"},
+    {src:"../../assets/images/sample.jpg"}
+    ];
   }
 }
 

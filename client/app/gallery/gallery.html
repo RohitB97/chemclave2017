@@ -1,1 +1,18 @@
 <div class='view'></div>
+
+<div class="gallery">
+ 
+ <!--<div class="image_view">
+  <img src="../../assets/images/sample.jpg" class="img-thumbnail imageInView">
+ </div><br>-->
+ 
+ <div class="row">
+  
+  <div ng-repeat="image in images" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 image_card">
+   <div class="thumbnail">
+    <a data-lightbox="{{image.src}}" href="{{image.src}}"><img src="{{image.src}}" class="panel_view"></a>
+    <i class="fa fa-instagram"></i>
+   </div> 
+  </div>
+
+</div>
