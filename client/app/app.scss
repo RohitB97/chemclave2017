@@ -87,7 +87,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   bottom: 120px;
   width:100vw;
   height:0.3vh;
-  animation: loading 5s; 
+  animation: loading 3s; 
 }
 
 @keyframes loading{
@@ -107,11 +107,11 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   height: 0px;
 }
 ::-webkit-scrollbar-thumb {
-  background: chartreuse;
+  background: aqua;
   border-radius: 100px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: aqua;
+  background: chartreuse;
 }
 ::-webkit-scrollbar-thumb:active {
   background: aqua;
