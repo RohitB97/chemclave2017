@@ -13,7 +13,7 @@ class SignupController {
   register(form) {
     this.submitted = true;
 
-    if(this.user.accomodation_status){
+    if(this.user.accomodation_status=="pending"){
       this.user.status_check=false;
     }
 

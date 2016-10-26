@@ -23,8 +23,16 @@ function handleError(res, statusCode) {
  * Get list of users
  * restriction: 'admin'
  */
-export function index(req, res) {
+export function Index(req, res) {
   return User.find({}, '-salt -password').exec()
+    .then(users => {
+      res.status(200).json(users);
+    })
+    .catch(handleError(res));
+}
+
+export function accomodationIndex(req, res) {
+  return User.find({role:'user',$or:[{accomodation_status:'Pending'},{status_check:true}]}, '-salt -password').exec()
     .then(users => {
       res.status(200).json(users);
     })
@@ -97,6 +105,20 @@ export function changePassword(req, res, next) {
         return res.status(403).end();
       }
     });
+}
+
+export function AcceptAccom(req, res, next) {
+  var userId = req.params._id;
+
+  return User.findByIdAndUpdate(req.params.id,{accomodation_status:"Approved",status_check:true}).exec()
+    .catch(handleError(res));
+}
+
+export function PendingAccom(req, res, next) {
+  var userId = req.params._id;
+
+  return User.findByIdAndUpdate(req.params.id,{accomodation_status:"Pending",status_check:false}).exec()
+    .catch(handleError(res));
 }
 
 /**

@@ -24,7 +24,4 @@ angular.module('chemclaveApp', ['chemclaveApp.auth', 'chemclaveApp.admin', 'chem
             setTimeout(function(){$(".load_main").css("display","none");},3500);
   	        setTimeout(function(){$(".userView").css("display","block");},3500)
           });
-  })
-
-  .controller("loadingCtrl",function(){
   }); 

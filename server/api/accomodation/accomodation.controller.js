@@ -1,16 +1,16 @@
 /**
  * Using Rails-like standard naming convention for endpoints.
- * GET     /api/events              ->  index
- * POST    /api/events              ->  create
- * GET     /api/events/:id          ->  show
- * PUT     /api/events/:id          ->  update
- * DELETE  /api/events/:id          ->  destroy
+ * GET     /api/accomodations              ->  index
+ * POST    /api/accomodations              ->  create
+ * GET     /api/accomodations/:id          ->  show
+ * PUT     /api/accomodations/:id          ->  update
+ * DELETE  /api/accomodations/:id          ->  destroy
  */
 
 'use strict';
 
 import _ from 'lodash';
-import Event from './event.model';
+import Accomodation from './accomodation.model';
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
@@ -59,43 +59,43 @@ function handleError(res, statusCode) {
   };
 }
 
-// Gets a list of Events
+// Gets a list of Accomodations
 export function index(req, res) {
-  return Event.find({name:req.params.name}).exec()
+  return Accomodation.find().exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Gets a single Event from the DB
+// Gets a single Accomodation from the DB
 export function show(req, res) {
-  return Event.findById(req.params.id).exec()
+  return Accomodation.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Creates a new Event in the DB
+// Creates a new Accomodation in the DB
 export function create(req, res) {
-  return Event.create(req.body)
+  return Accomodation.create(req.body)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
 }
 
-// Updates an existing Event in the DB
+// Updates an existing Accomodation in the DB
 export function update(req, res) {
   if (req.body._id) {
     delete req.body._id;
   }
-  return Event.findById(req.params.id).exec()
+  return Accomodation.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(saveUpdates(req.body))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Deletes a Event from the DB
+// Deletes a Accomodation from the DB
 export function destroy(req, res) {
-  return Event.findById(req.params.id).exec()
+  return Accomodation.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(removeEntity(res))
     .catch(handleError(res));

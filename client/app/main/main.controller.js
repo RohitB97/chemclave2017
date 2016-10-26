@@ -4,22 +4,14 @@
 
   class MainController {
 
-    constructor($http, $scope, socket) {
-      this.$http = $http;
-      this.socket = socket;
-      this.awesomeThings = [];
+    constructor($http, $scope, socket, Auth, $rootScope) {
 
-      $scope.$on('$destroy', function() {
-        socket.unsyncUpdates('thing');
-      });
+    $rootScope.CurrentUser = Auth.getCurrentUser();
+      
     }
 
     $onInit() {
-      this.$http.get('/api/things')
-        .then(response => {
-          this.awesomeThings = response.data;
-          this.socket.syncUpdates('thing', this.awesomeThings);
-        });
+
     }
 
     /**addThing() {

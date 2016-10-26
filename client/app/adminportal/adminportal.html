@@ -8,20 +8,22 @@
 <div class="tab-content container">
   
   <div role="tabpanel" id="finance" class="tab-pane fade in active"><br><br>
-     <div class="container">
+   <div class="container">
+   <button class="btn btn-success btn-lg" ng-click="saveChanges()">Save Changes</button>&nbsp;&nbsp;
+   <button class="btn btn-primary btn-lg" ng-click="undoChanges()">Undo Changes</button><br><br>
     <ul class="list-group">
       <li ng-repeat="user in user_list" class="list-group-item list-group-item portal_panel">
       <span class="badge"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></span>
        <p>
          {{user.name}}
-         <span ng-show="user.accepted" class="label label-success status_pos">{{user.accomodation_status}}</span>
-         <span ng-show="!user.accepted" class="label label-primary status_pos">{{user.accomodation_status}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <span ng-show="user.status_check" class="label label-success status_pos">{{user.accomodation_status}}</span>
+         <span ng-show="!user.status_check" class="label label-primary status_pos">{{user.accomodation_status}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
          <span ng-click="display_options()" class="glyphicon glyphicon-pencil option" aria-hidden="true"></span>
        </p>
        <p ng-show="show_options">
         <span class="option_pos">
-          <span ng-click="option_click('approved',user.name)" class="label label-success option">Approve</span>&nbsp;&nbsp;
-          <span ng-click="option_click()" class="label label-danger option">Reject</span>&nbsp;&nbsp;
+          <span ng-click="accept(user._id)" class="label label-success option">Approve</span>&nbsp;&nbsp;
+          <span ng-click="reject(user._id)" class="label label-danger option">Reject</span>&nbsp;&nbsp;
           <!--<span class="label label-danger option">Reject</span>&nbsp;&nbsp;-->
         </span>  
        </p>
@@ -32,13 +34,14 @@
   
   <div role="tabpanel" id="events" class="tab-pane fade"><br><br>
    
-    <button data-toggle='modal' data-target='#event_info' type="button" class="btn btn-primary">Event_Info</button>&nbsp;&nbsp;
-    <button data-toggle='modal' data-target='#ps' type="button" class="btn btn-danger">Problem Statement</button><br><br><br>
+    <button data-toggle='modal' data-target='#event_info' type="button" class="btn btn-primary btn-lg">Event_Info</button>&nbsp;&nbsp;
+    <button data-toggle='modal' data-target='#ps' type="button" class="btn btn-danger btn-lg">Problem Statement</button><br><br><br>
 
     <ul class="list-group">
      <li ng-repeat="user in user_list" class="list-group-item">
       <span>{{user.name}}</span>
       <span class="status_pos">{{user.mobile}}</span>
+      <span class="status_pos">{{user.email}}</span>
      </li>
     </ul>
    

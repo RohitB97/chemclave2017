@@ -6,10 +6,13 @@ import * as auth from '../../auth/auth.service';
 
 var router = new Router();
 
-router.get('/', auth.hasRole('admin'), controller.index);
+router.get('/', auth.hasRole('admin'), controller.Index);
+router.get('/notadmin/getusers', controller.accomodationIndex);
 router.delete('/:id', auth.hasRole('admin'), controller.destroy);
 router.get('/me', auth.isAuthenticated(), controller.me);
 router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
+router.put('/accomAccept/:id', controller.AcceptAccom);
+router.put('/accomPending/:id', controller.PendingAccom);
 router.get('/:id', auth.isAuthenticated(), controller.show);
 router.post('/', controller.create);
 

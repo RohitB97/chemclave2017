@@ -3,8 +3,17 @@
 (function(){
 
 class AdminportalComponent {
-  constructor($scope) {
+  constructor($scope,$http,$rootScope) {
+  
+  //Code for finance portal starts here
+     var i,j;
+
     $scope.show_options = false;
+    $scope.user_list=[];
+    $scope.event=[];
+    $scope.acceptedList=[];
+    $scope.pendingList=[];
+
     
     $scope.display_options = function(){
     	if($scope.show_options==false)
@@ -14,18 +23,47 @@ class AdminportalComponent {
        	$scope.show_options = false;
     };
 
-    $scope.user_list = [
-      {name:'User 1',accomodation_status:'Pending',accepted:false,mobile:9988776655},
-      {name:'User 2',accomodation_status:'Approved',accepted:true,mobile:9988776655},
-      {name:'User 3',accomodation_status:'Approved',accepted:true,mobile:9988776655},
-      {name:'User 4',accomodation_status:'Pending',accepted:false,mobile:9988776655},
-      {name:'User 5',accomodation_status:'Pending',accepted:false,mobile:9988776655},
-      {name:'User 6',accomodation_status:'Approved',accepted:true,mobile:9988776655}
-    ];
+    $http.get("/api/users/notadmin/getusers").success(function(response){
+       $scope.user_list = response;
+    });
 
-    $scope.option_click = function(option,id){
+    $scope.accept = function(id){
+      $scope.acceptedList.push(id); 
+    };
+
+    $scope.reject = function(id){
+       $scope.pendingList.push(id);
+    };
+
+    $scope.saveChanges = function(){
+      for(i=0;i<$scope.acceptedList.length;i++)
+       {   
+          $http.put("/api/users/accomAccept/"+$scope.acceptedList[i]).success(function(){
+           });
+       }
+
+      for(j=0;j<$scope.pendingList.length;j++)
+       {   
+          $http.put("/api/users/accomPending/"+$scope.pendingList[j]).success(function(){
+           });
+       }
+
+       alert("Click the button to load the changes");
        
-    }
+       setTimeout(function(){location.reload();},2000);
+
+    };
+
+    $scope.undoChanges = function(){
+      var choice = confirm("The changes will be reverted !");
+       
+       if(choice == true)
+        location.reload();
+    };
+
+    //Code for finance portal ends here
+  
+
   }
 }
 
