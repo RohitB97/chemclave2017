@@ -6,6 +6,8 @@
 </ul>
 
 <div class="tab-content container">
+
+  <!--Finance Portal starts-->
   
   <div role="tabpanel" id="finance" class="tab-pane fade in active"><br><br>
    <div class="container">
@@ -22,15 +24,18 @@
        </p>
        <p ng-show="show_options">
         <span class="option_pos">
-          <span ng-click="accept(user._id)" class="label label-success option">Approve</span>&nbsp;&nbsp;
-          <span ng-click="reject(user._id)" class="label label-danger option">Reject</span>&nbsp;&nbsp;
-          <!--<span class="label label-danger option">Reject</span>&nbsp;&nbsp;-->
+          <span ng-click="accept(user,$index)" class="label label-success option">Approve</span>&nbsp;&nbsp;
+          <span ng-click="reject(user,$index)" class="label label-danger option">Reject</span>&nbsp;&nbsp;
         </span>  
        </p>
       </li>
     </ul>
    </div>
   </div>
+
+  <!-- Finance Portal ends-->
+
+  <!-- Events portal starts-->
   
   <div role="tabpanel" id="events" class="tab-pane fade"><br><br>
    
@@ -82,5 +87,7 @@
      </div><!-- /.modal -->
 
   </div>
+
+  <!-- Events portal ends-->
 
 </div>

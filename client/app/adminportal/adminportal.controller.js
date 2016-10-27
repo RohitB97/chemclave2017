@@ -27,12 +27,16 @@ class AdminportalComponent {
        $scope.user_list = response;
     });
 
-    $scope.accept = function(id){
-      $scope.acceptedList.push(id); 
+    $scope.accept = function(user,index){
+      $scope.user_list[index].status_check = true;
+      $scope.user_list[index].accomodation_status = "Accepted";
+      $scope.acceptedList.push(user._id); 
     };
 
-    $scope.reject = function(id){
-       $scope.pendingList.push(id);
+    $scope.reject = function(user,index){
+      $scope.user_list[index].status_check = false;
+      $scope.user_list[index].accomodation_status = "Pending";
+      $scope.pendingList.push(user._id);
     };
 
     $scope.saveChanges = function(){
