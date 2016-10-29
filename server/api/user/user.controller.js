@@ -31,6 +31,14 @@ export function Index(req, res) {
     .catch(handleError(res));
 }
 
+export function userCount(req, res) {
+  return User.find({}, '-salt -password').exec()
+    .then(users => {
+      res.status(200).json(users);
+    })
+    .catch(handleError(res));
+}
+
 export function accomodationIndex(req, res) {
   return User.find({role:'user',$or:[{accomodation_status:'Pending'},{status_check:true}]}, '-salt -password').exec()
     .then(users => {
@@ -118,6 +126,13 @@ export function PendingAccom(req, res, next) {
   var userId = req.params._id;
 
   return User.findByIdAndUpdate(req.params.id,{accomodation_status:"Pending",status_check:false}).exec()
+    .catch(handleError(res));
+}
+
+export function RequestAccom(req, res, next) {
+  var userId = req.params._id;
+
+  return User.findByIdAndUpdate(req.params.id,{pdf_name:req.body}).exec()
     .catch(handleError(res));
 }
 

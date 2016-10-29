@@ -10,6 +10,8 @@ const authTypes = ['github', 'twitter', 'facebook', 'google'];
 var UserSchema = new Schema({
   name: String,
   college: String,
+  ID: String,
+  pdf_name: String,
   city: String,
   mobile: Number,
   accomodation_status: String,

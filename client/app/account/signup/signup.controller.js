@@ -3,28 +3,29 @@
 class SignupController {
   //end-non-standard
 
-  constructor(Auth, $state) {
+  constructor(Auth, $state,$rootScope) {
       this.Auth = Auth;
       this.$state = $state;
+      this.$rootScope = $rootScope;
     }
     //start-non-standard
 
 
   register(form) {
     this.submitted = true;
+    this.user.ID = "CC17" + (1000 + this.$rootScope.userCount).toString().slice(1);
 
-    if(this.user.accomodation_status=="pending"){
+    /*if(this.user.accomodation_status=="pending"){
       this.user.status_check=false;
-    }
+    }*/
 
     if (form.$valid) {
       this.Auth.createUser({
           name: this.user.name,
+          ID: this.user.ID,
           city: this.user.city,
           college: this.user.college,
           mobile: this.user.mobile,
-          accomodation_status: this.user.accomodation_status,
-          status_check: this.user.status_check,
           email: this.user.email,
           password: this.user.password
         })

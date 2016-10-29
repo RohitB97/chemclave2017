@@ -3,7 +3,7 @@
 (function(){
 
 class AdminportalComponent {
-  constructor($scope,$http,$rootScope) {
+  constructor($scope,$http) {
   
   //Code for finance portal starts here
      var i,j;
@@ -23,7 +23,7 @@ class AdminportalComponent {
        	$scope.show_options = false;
     };
 
-    $http.get("/api/users/notadmin/getusers").success(function(response){
+    $http.get("/api/users/erp/getusers").success(function(response){
        $scope.user_list = response;
     });
 
