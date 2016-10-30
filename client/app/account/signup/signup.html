@@ -9,9 +9,11 @@
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && vm.submitted,
                                             'has-error': form.name.$invalid && vm.submitted }">
           <label>Name</label>
-
+          <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span> 
           <input type="text" name="name" class="form-control" ng-model="vm.user.name"
                  required/>
+          </div>       
           <p class="help-block" ng-show="form.name.$error.required && vm.submitted">
             A name is required
           </p>
@@ -19,10 +21,12 @@
        
        <div class="form-group" ng-class="{ 'has-success': form.name.$valid && vm.submitted,
                                             'has-error': form.name.$invalid && vm.submitted }">
-          <label>Institute Name</label>
-
+          <label>College</label>
+          <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-university"></i></span>
           <input type="text" name="college" class="form-control" ng-model="vm.user.college"
                  required/>
+          </div>      
           <p class="help-block" ng-show="form.name.$error.required && vm.submitted">
             Mention your college name
           </p>
@@ -31,9 +35,11 @@
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && vm.submitted,
                                             'has-error': form.name.$invalid && vm.submitted }">
           <label>Mobile no.</label>
-
+          <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span>
           <input type="text" name="mobile" class="form-control" ng-model="vm.user.mobile"
                  required/>
+          </div>
           <p class="help-block" ng-show="form.name.$error.required && vm.submitted">
             Mention your number
           </p>
@@ -42,9 +48,11 @@
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && vm.submitted,
                                             'has-error': form.name.$invalid && vm.submitted }">
           <label>City</label>
-
+          <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
           <input type="text" name="city" class="form-control" ng-model="vm.user.city"
                  required/>
+           </div>      
           <p class="help-block" ng-show="form.name.$error.required && vm.submitted">
             Mention your city
           </p>
@@ -53,10 +61,12 @@
         <div class="form-group" ng-class="{ 'has-success': form.email.$valid && vm.submitted,
                                             'has-error': form.email.$invalid && vm.submitted }">
           <label>Email</label>
-
+          <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
           <input type="email" name="email" class="form-control" ng-model="vm.user.email"
                  required
                  mongoose-error/>
+           </div>      
           <p class="help-block" ng-show="form.email.$error.email && vm.submitted">
             Doesn't look like a valid email.
           </p>
@@ -71,11 +81,13 @@
         <div class="form-group" ng-class="{ 'has-success': form.password.$valid && vm.submitted,
                                             'has-error': form.password.$invalid && vm.submitted }">
           <label>Password</label>
-
+          <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
           <input type="password" name="password" class="form-control" ng-model="vm.user.password"
                  ng-minlength="3"
                  required
                  mongoose-error/>
+          </div>      
           <p class="help-block"
              ng-show="(form.password.$error.minlength || form.password.$error.required) && vm.submitted">
             Password must be at least 3 characters.
@@ -88,9 +100,12 @@
         <div class="form-group" ng-class="{ 'has-success': form.confirmPassword.$valid && vm.submitted,
                                             'has-error': form.confirmPassword.$invalid && vm.submitted }">
           <label>Confirm Password</label>
+          <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
           <input type="password" name="confirmPassword" class="form-control" ng-model="vm.user.confirmPassword"
                  match="vm.user.password"
                  ng-minlength="3" required/>
+          </div>      
           <p class="help-block"
              ng-show="form.confirmPassword.$error.match && vm.submitted">
             Passwords must match.
