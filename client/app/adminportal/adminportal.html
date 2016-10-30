@@ -14,7 +14,7 @@
    <button class="btn btn-success btn-lg" ng-click="saveChanges()">Save Changes</button>&nbsp;&nbsp;
    <button class="btn btn-primary btn-lg" ng-click="undoChanges()">Undo Changes</button><br><br>
     <ul class="list-group">
-      <li ng-repeat="user in user_list" class="list-group-item list-group-item portal_panel">
+      <li ng-repeat="user in user_list" class="list-group-item portal_panel">
       <span class="badge"><a target="_blank" href="../../assets/files/test.pdf" class="glyphicon glyphicon-file" aria-hidden="true"></a></span>
        <p>
          {{user.name}}
@@ -43,7 +43,7 @@
     <button data-toggle='modal' data-target='#ps' type="button" class="btn btn-danger btn-lg">Problem Statement</button><br><br><br>
 
     <ul class="list-group">
-     <li ng-repeat="user in user_list" class="list-group-item">
+     <li ng-repeat="user in user_list" class="list-group-item portal_panel">
       <span>{{user.name}}</span>
       <span class="status_pos">{{user.mobile}}</span>
       <span class="status_pos">{{user.email}}</span>
