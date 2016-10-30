@@ -15,12 +15,12 @@
    <button class="btn btn-primary btn-lg" ng-click="undoChanges()">Undo Changes</button><br><br>
     <ul class="list-group">
       <li ng-repeat="user in user_list" class="list-group-item portal_panel">
-      <span class="badge"><a target="_blank" href="../../assets/files/test.pdf" class="glyphicon glyphicon-file" aria-hidden="true"></a></span>
        <p>
          {{user.name}}
          <span ng-show="user.status_check" class="label label-success status_pos">{{user.accomodation_status}}</span>
          <span ng-show="!user.status_check" class="label label-primary status_pos">{{user.accomodation_status}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
          <span ng-click="display_options()" class="glyphicon glyphicon-pencil option" aria-hidden="true"></span>
+         <a class="reciept" target="_blank" href="../../assets/files/test.pdf">View Fee Reciept</a>
        </p>
        <p ng-show="show_options">
         <span class="option_pos">
@@ -28,6 +28,7 @@
           <span ng-click="reject(user,$index)" class="label label-danger option">Reject</span>&nbsp;&nbsp;
         </span>  
        </p>
+
       </li>
     </ul>
    </div>
@@ -58,7 +59,7 @@
             <h4 class="modal-title">Event Information</h4>
           </div>
           <div class="modal-body">
-           <textarea class="form-control" rows="5" id="comment">Event Information</textarea>
+           <textarea id="textarea45" class="form-control" rows="10">Event Information</textarea>
           </div>
           <div class="modal-footer">
            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -76,7 +77,7 @@
             <h4 class="modal-title">Problem Statement</h4>
           </div>
           <div class="modal-body">
-           <textarea class="form-control" rows="5" id="comment">Event Information</textarea>
+           <textarea class="form-control" rows="10" id="comment">Event Information</textarea>
           </div>
           <div class="modal-footer">
            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

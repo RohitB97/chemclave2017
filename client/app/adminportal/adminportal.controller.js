@@ -65,8 +65,7 @@ class AdminportalComponent {
         location.reload();
     };
 
-    //Code for finance portal ends here
-  
+    //Code for finance portal ends here  
 
   }
 }
