@@ -25,13 +25,16 @@
 .navbar-text {
   margin-left: 15px;
 }
-
+/*
 .container{
   padding-left:44px;
   padding-right:44px;
-}
+}*/
 .panel-heading{
   position: relative;
+}
+.panel-body{
+  background: #444444;
 }
 .acmd-stat{
   text-align: center;
@@ -46,11 +49,12 @@ figure {
   position: relative;
   float: left;
   overflow: hidden;
-  margin: 0 20px 20px 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 figcaption {
   position: absolute;
-  background: black;
+  background: #444;
   background: transparent;
   color: white;
   padding: 10px 20px;
