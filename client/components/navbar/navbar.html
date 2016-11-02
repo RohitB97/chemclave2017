@@ -7,14 +7,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a ui-sref="main" class="navbar-brand">Dashboard</a>
+      <a ui-sref="main" class="navbar-brand">ChemClave</a>
       <ul class="nav navbar-nav">
        <li><a ui-sref="eventcategory">Events</a></li>
        <li><a ui-sref="gallery">Hall of Fame</a></li>
        <li><a ui-sref="sponsors">Sponsors</a></li>
        <li><a ui-sref="contacts">Reach Us</a></li>
        <li><a ui-sref="">Campus Ambassador</a></li>
-       <li><a ui-sref="adminportal">Admin Portal</a></li>
       </ul>
     </div>
     <div uib-collapse="nav.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
@@ -26,11 +25,11 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
-        <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Login</a></li>
-        <li ng-show="nav.isLoggedIn()"><p class="navbar-text">Hello {{ nav.getCurrentUser().name }}</p> </li>
-        <li ng-show="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span></a></li>
-        <li ng-show="nav.isLoggedIn()"><a ui-sref="logout">Logout</a></li>
+        <li ng-hide="isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
+        <li ng-hide="isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Login</a></li>
+        <li ng-show="isLoggedIn()"><p class="navbar-text">{{CurrentUser().name}}</p> </li>
+        <li ng-show="isLoggedIn()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span></a></li>
+        <li ng-show="isLoggedIn()"><a ui-sref="logout">Logout</a></li>
       </ul>
     </div>
   </div>
