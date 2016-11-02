@@ -5,8 +5,7 @@
   class MainController {
 
     constructor($http, $scope, socket, Auth, $rootScope) {
-
-    $rootScope.CurrentUser = Auth.getCurrentUser();
+      
       
     }
 

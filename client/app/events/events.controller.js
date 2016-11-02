@@ -3,7 +3,11 @@
 (function(){
 
 class EventsComponent {
-  constructor() {
+  constructor($scope,$http) {
+    $scope.categoryClick = function(){
+       
+    }
+
   }
 }
 
