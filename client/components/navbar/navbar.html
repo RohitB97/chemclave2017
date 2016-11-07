@@ -1,4 +1,4 @@
-<div class="navbar navbar-inverse navbar-static-top" ng-controller="NavbarController">
+<div class="navbar navbar-inverse navbar-static-top hidden-xs hidden-sm" ng-controller="NavbarController">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" ng-click="nav.isCollapsed = !nav.isCollapsed">
@@ -34,3 +34,28 @@
     </div>
   </div>
 </div>
+
+<header class="row hidden-md hidden-lg">
+        <p id="logo">
+            <a ui-sref="main" title="ChemClave">ChemClave</a>
+        </p>
+        <a id="nav-toggle"></a>
+        <nav id="nav-menu">
+            <a id="navlogo" href="/"></a>
+            <a id="nav-close"><span></span><span></span></a>
+            <div class="modmenu">
+            <ul  id="menulist_root" class="mainlevel"
+            <li class="mainlevel first" id="menuitem_1"><a ui-sref="main" class="mainlevel" id="menulink_1"><span>Home</span></a></li>
+            <li class="mainlevel" id="menuitem_2"><a ui-sref="gallery" class="mainlevel" id="menulink_2"><span>Gallery</span></a></li>
+            <li class="mainlevel_current" id="menuitem_3"><a ui-sref="eventcategory" class="mainlevel_current" id="menulink_3"><span>Events</span></a></li>
+            <li class="mainlevel" id="menuitem_4"><a ui-sref="contactus" class="mainlevel" id="menulink_4"><span>Reach Us</span></a></li>
+            <li class="mainlevel" id="menuitem_5"><a ui-sref="signup" class="mainlevel" id="menulink_5"><span>Sign Up</span></a></li>
+            <li class="mainlevel" id="menuitem_6"><a ui-sref="login" class="mainlevel" id="menulink_6"><span>Login</span></a></li>
+            </ul>
+            </div>
+  
+            <div style="clear:both;"></div>
+        </nav>
+
+
+    </header>
