@@ -10,7 +10,6 @@ class AdminportalComponent {
 
     $scope.show_options = false;
     $scope.user_list=[];
-    $scope.event=[];
     $scope.acceptedList=[];
     $scope.pendingList=[];
 

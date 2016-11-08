@@ -29,6 +29,7 @@ angular.module('chemclaveApp', ['chemclaveApp.auth', 'chemclaveApp.admin', 'chem
   .controller("indexCtrl",["$rootScope","$http",function($rootScope,$http){
      $http.get("api/users/userCount").success(function(response){
          $rootScope.userCount = response.length;
+         console.log(response.length);
       })
   
   }]); 

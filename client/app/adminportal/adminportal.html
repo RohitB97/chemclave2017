@@ -43,13 +43,32 @@
     <button data-toggle='modal' data-target='#event_info' type="button" class="btn btn-primary btn-lg">Event_Info</button>&nbsp;&nbsp;
     <button data-toggle='modal' data-target='#ps' type="button" class="btn btn-danger btn-lg">Problem Statement</button><br><br><br>
 
-    <ul class="list-group">
-     <li ng-repeat="user in user_list" class="list-group-item portal_panel">
-      <span>{{user.name}}</span>
-      <span class="status_pos">{{user.mobile}}</span>
-      <span class="status_pos">{{user.email}}</span>
-     </li>
-    </ul>
+    <div class="table-responsive">          
+     <table class="table table-bordered" style="background-color:white;">
+      <thead>
+       <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>ID</th>
+        <th>College</th>
+        <th>Email</th>
+        <th>Mobile No.</th>
+        <th>City</th>
+      </tr>
+     </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Anna</td>
+        <td>CC17003</td>
+        <td>Pitt</td>
+        <td>anna"pitt.com</td>
+        <td>9709709709</td>
+        <td>New York</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
    
     <div id='event_info' class="modal fade" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
@@ -91,4 +110,4 @@
 
   <!-- Events portal ends-->
 
-</div>
+</div>-->

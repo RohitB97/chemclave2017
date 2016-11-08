@@ -13,11 +13,7 @@ class SignupController {
 
   register(form) {
     this.submitted = true;
-    this.user.ID = "CC17" + (1000 + this.$rootScope.userCount).toString().slice(1);
-
-    /*if(this.user.accomodation_status=="pending"){
-      this.user.status_check=false;
-    }*/
+    this.user.ID = "CC17" + (1000 + this.$rootScope.userCount + 1).toString().slice(1);
 
     if (form.$valid) {
       this.Auth.createUser({
