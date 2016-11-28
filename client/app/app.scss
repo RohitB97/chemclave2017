@@ -8,6 +8,10 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
  * App-wide Styles
  */
 
+.body{
+   overflow-x:hidden;
+}
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -27,80 +31,6 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   height:8vh;
 }
 
-.userView{
-  overflow-x:hidden;
-  width:100%;
-  height:100%;
-}
-
-.load_main{
-  position:absolute;
-  z-index:9999;
-  top:0;
-  background-color:black;
-  width:100vw;
-  height:100vh;
-}
-
-.load {
-  margin-left:42%;
-  margin-top:15%;
-  border-top: 14px solid aqua;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border-bottom: 14px solid aqua;
-  border-right: 14px solid lightgreen;
-  border-left: 14px solid lightgreen;
-  animation: spin 1.5s linear infinite;
-}
-
-.load_image
-{
-  width:100%;
-  height:100%;
-  animation:reverse_spin 1.5s linear infinite , appear 2s linear;
-
-}
-
-@keyframes reverse_spin {
-  0% { transform: rotate(360deg);}
-  100% { transform: rotate(0deg);}
-}
-
-
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
- 
-}
-
-@keyframes appear{
-  0%{opacity:0;}
-  50%{opacity:0;}
-  100%{opacity:1;}
-}
-
-#load_bar{
-  position: absolute;
-  color:white;
-  background-color: white;
-  font-weight: 900;
-  bottom: 120px;
-  width:100vw;
-  height:0.3vh;
-  animation: loading 3s; 
-}
-
-@keyframes loading{
-  0%{width:0;}
-  20%{width:0vw;}
-  40%{width:40vw;}
-  80%{width:80vw;}
-  100%{width:100vw;}
-}
-
 ::-webkit-scrollbar {
   width: 8px;
   height: 0px;
@@ -110,14 +40,14 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   height: 0px;
 }
 ::-webkit-scrollbar-thumb {
-  background: aqua;
+  background: coral;
   border-radius: 100px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: chartreuse;
+  background: mintcream;
 }
 ::-webkit-scrollbar-thumb:active {
-  background: aqua;
+  background: coral;
 }
 ::-webkit-scrollbar-track {
   background: #666666;

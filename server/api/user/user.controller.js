@@ -116,21 +116,18 @@ export function changePassword(req, res, next) {
 }
 
 export function AcceptAccom(req, res, next) {
-  var userId = req.params._id;
 
   return User.findByIdAndUpdate(req.params.id,{accomodation_status:"Approved",status_check:true}).exec()
     .catch(handleError(res));
 }
 
 export function PendingAccom(req, res, next) {
-  var userId = req.params._id;
 
   return User.findByIdAndUpdate(req.params.id,{accomodation_status:"Pending",status_check:false}).exec()
     .catch(handleError(res));
 }
 
 export function RequestAccom(req, res, next) {
-  var userId = req.params._id;
 
   return User.findByIdAndUpdate(req.params.id,{pdf_name:req.body}).exec()
     .catch(handleError(res));
