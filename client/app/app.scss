@@ -14,6 +14,26 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
    overflow-x:hidden;
 }
 
+.content{
+  position: absolute;
+  z-index: 10;
+  min-height: 30vh;
+  max-height: 30vh;
+  overflow:auto;
+  top:65vh;
+  left:5vw;
+  color: #b70505;
+  font-family: 'Josefin Sans', sans-serif; 
+}
+
+.auth_pages{
+  width:100vw;
+  height:100vh;
+  position:fixed;
+  background-size: 100% 100%;
+  background-image: url('../assets/images/main_half.jpg');
+}
+
 /* Navbar css code begins */
 
 .nav2{

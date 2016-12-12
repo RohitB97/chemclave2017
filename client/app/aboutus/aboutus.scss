@@ -5,15 +5,3 @@
   background-size: 100% 100%;
   background-image: url('../assets/images/main_half.jpg');
 }
-
-.content{
-	position: absolute;
-	z-index: 10;
-	min-height: 30vh;
-    max-height: 30vh;
-	overflow:auto;
-	top:70vh;
-	left:5vw;
-	color: #b70505;
-	font-family: 'Josefin Sans', sans-serif; 
-}

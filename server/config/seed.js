@@ -13,7 +13,7 @@ User.find({role:'admin'}).remove()
       provider: 'local',
       role: 'admin',
       name: 'Web Admin',
-      email: 'admin@chemclave',
+      email: 'admin@chemclave.org',
       password: 'y7uy7uy7u'
     })
     .then(() => {
