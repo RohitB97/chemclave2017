@@ -40,6 +40,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 
 #title2{
   color:white;
+  font-size:12px;
   font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -47,7 +48,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   z-index:10;
   position:absolute;
   color:white;
-  font-weight:900;
+  font-weight:bolder;
   font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -67,7 +68,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 
 .workshops{
   top:8vh;
-  left:45vw;
+  left:45.5vw;
 }
 
 .sponsors{

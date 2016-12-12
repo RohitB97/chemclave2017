@@ -8,6 +8,7 @@
 
 .content{
 	position: absolute;
+	z-index: 10;
 	min-height: 30vh;
     max-height: 30vh;
 	overflow:auto;
