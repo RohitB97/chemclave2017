@@ -4,7 +4,7 @@ angular.module('chemclaveApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('events', {
-        url: '/eventcategory/:event',
+        url: '/events',
         template: '<events></events>'
       });
   });

@@ -1,106 +1,40 @@
-.thing-form {
-  margin: 20px 0;
+.main_page{
+  width:100vw;
+  height:100vh;
+  position:fixed;
+  background-size: 100% 100%;
+  background-image: url('../assets/images/main.png');
 }
 
-#banner {
-  border-bottom: none;
-  margin-top: -20px;
+.nav1{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
 }
 
-#banner h1 {
-  font-size: 60px;
-  line-height: 1;
-  letter-spacing: -1px;
+.aboutus_main{
+  top:65vh;
+  left: 15vw;
 }
 
-.hero-unit {
-  position: relative;
-  padding: 30px 15px;
-  color: #F5F5F5;
-  text-align: center;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  background: #4393B9;
+.events_main{
+  top:40vh;
+  left: 25vw;
 }
 
-.navbar-text {
-  margin-left: 15px;
-}
-/*
-.container{
-  padding-left:44px;
-  padding-right:44px;
-}*/
-.panel-heading{
-  position: relative;
-}
-.panel-body{
-  background: #444444;
-}
-.acmd-stat{
-  text-align: center;
-  font-size: 13px;
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-family: sans-serif;
-}
-figure {
-  display: block;
-  position: relative;
-  float: left;
-  overflow: hidden;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-figcaption {
-  position: absolute;
-  background: #444;
-  background: transparent;
-  color: white;
-  padding: 10px 20px;
-  opacity: 0;
-  -webkit-transition: all 0.6s ease;
-  -moz-transition:    all 0.6s ease;
-  -o-transition:      all 0.6s ease;
-}
-figure:hover figcaption {
-  opacity: 1;
-}
-figure:before {
-  content: "?";
-  position: absolute;
-  font-weight: 800;
-  background: black;
-  background: rgba(255,255,255,0.75);
-  text-shadow: 0 0 5px white;
-  color: black;
-  width: 24px;
-  height: 24px;
-  -webkit-border-radius: 12px;
-  -moz-border-radius:    12px;
-  border-radius:         12px;
-  text-align: center;
-  font-size: 14px;
-  line-height: 24px;
-  -moz-transition: all 0.6s ease;
-  opacity: 0.75;
-}
-figure:hover:before {
-  opacity: 0;
+.workshops_main{
+  top:28vh;
+  left:45vw;
 }
 
-.cap-left:before {  bottom: 10px; left: 10px; }
-.cap-left figcaption { bottom: 0; left: -30%; }
-.cap-left:hover figcaption { left: 0; }
+.sponsors_main{
+  top:40vh;
+  right:25vw;
+}
 
-.cap-right:before { bottom: 10px; right: 10px; }
-.cap-right figcaption { bottom: 0; right: -30%; }
-.cap-right:hover figcaption { right: 0; }
-
-.cap-top:before { top: 10px; left: 10px; }
-.cap-top figcaption { left: 0; top: -30%; }
-.cap-top:hover figcaption { top: 0; }
-
-.cap-bot:before { bottom: 10px; left: 10px; }
-.cap-bot figcaption { left: 0; bottom: -30%;}
-.cap-bot:hover figcaption { bottom: 0; }
+.team_main{
+  top:65vh;
+  right:15vw;
+}

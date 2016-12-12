@@ -10,10 +10,8 @@ angular.module('chemclaveApp', ['chemclaveApp.auth', 'chemclaveApp.admin', 'chem
     $locationProvider.html5Mode(true);
   })
 
-  .controller("indexCtrl",["$rootScope","$http",function($rootScope,$http){
+  .run(function($rootScope,$http){
      $http.get("api/users/userCount").success(function(response){
          $rootScope.userCount = response.length;
-         console.log(response.length);
-      })
-  
-  }]); 
+      });
+  }); 

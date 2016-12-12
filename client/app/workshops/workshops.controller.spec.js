@@ -1,15 +1,15 @@
 'use strict';
 
-describe('Component: GalleryComponent', function () {
+describe('Component: WorkshopsComponent', function () {
 
   // load the controller's module
   beforeEach(module('chemclaveApp'));
 
-  var GalleryComponent;
+  var WorkshopsComponent;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($componentController) {
-    GalleryComponent = $componentController('gallery', {});
+    WorkshopsComponent = $componentController('workshops', {});
   }));
 
   it('should ...', function () {

@@ -4,6 +4,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 $fa-font-path: "../bower_components/font-awesome/fonts";
 @import '../bower_components/font-awesome/scss/font-awesome';
 
+@import "https://fonts.googleapis.com/css?family=Josefin+Sans";
+
 /**
  * App-wide Styles
  */
@@ -12,6 +14,74 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
    overflow-x:hidden;
 }
 
+/* Navbar css code begins */
+
+.nav2{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:-21vh;
+  left:0;
+}
+
+.title{
+  position:absolute;
+  z-index:10;
+  top:8vh;
+  left:5vw;
+}
+
+#title1{
+  cursor: pointer;
+  font-size: 24px;
+  color:#c1b302;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+#title2{
+  color:white;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.tabs{
+  z-index:10;
+  position:absolute;
+  color:white;
+  font-weight:900;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.tab{
+  cursor:pointer;
+}
+
+.aboutus{
+  top:45vh;
+  left: 15vw;
+}
+
+.events{
+  top:20vh;
+  left: 25vw;
+}
+
+.workshops{
+  top:8vh;
+  left:45vw;
+}
+
+.sponsors{
+  top:20vh;
+  right:25vw;
+}
+
+.team{
+  top:45vh;
+  right:15vw;
+}
+
+/* navbar css code ends */
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -19,20 +89,10 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   padding: 0.2em 0;
 }
 
-.social_icons_set{
-  position:fixed;
-  bottom: 8vh;
-  right:2vw;
-  z-index: 999;
-}
-
-.social_icons{
-  width:8vh;
-  height:8vh;
-}
+/* scroll bar css */
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
   height: 0px;
 }
 ::-webkit-scrollbar-button {
@@ -40,7 +100,8 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   height: 0px;
 }
 ::-webkit-scrollbar-thumb {
-  background: coral;
+  background: mintcream;
+  width:8px;
   border-radius: 100px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -50,10 +111,10 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   background: coral;
 }
 ::-webkit-scrollbar-track {
-  background: #666666;
+  background: black;
 }
 ::-webkit-scrollbar-track:hover {
-  background: #666666;
+  background: black;
 }
 ::-webkit-scrollbar-track:active {
   background: #333333;
@@ -66,12 +127,11 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 /* inject:scss */
 @import 'aboutus/aboutus.scss';
 @import 'admin/admin.scss';
-@import 'contacts/contacts.scss';
-@import 'eventcategory/eventcategory.scss';
 @import 'events/events.scss';
-@import 'gallery/gallery.scss';
 @import 'main/main.scss';
 @import 'sponsors/sponsors.scss';
+@import 'team/team.scss';
+@import 'workshops/workshops.scss';
 @import '../components/footer/footer.scss';
 @import '../components/modal/modal.scss';
 @import '../components/oauth-buttons/oauth-buttons.scss';

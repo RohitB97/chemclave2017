@@ -1,61 +1,34 @@
-<div class="navbar navbar-inverse navbar-static-top hidden-xs hidden-sm" ng-controller="NavbarController">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" ng-click="nav.isCollapsed = !nav.isCollapsed">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a ui-sref="main" class="navbar-brand">Home</a>
-      <ul class="nav navbar-nav">
-       <li><a ui-sref="eventcategory">Events</a></li>
-       <li><a ui-sref="gallery">Hall of Fame</a></li>
-       <li><a ui-sref="sponsors">Sponsors</a></li>
-       <li><a ui-sref="contacts">Reach Us</a></li>
-       <li><a ui-sref="">Campus Ambassador</a></li>
-      </ul>
-    </div>
-    <div uib-collapse="nav.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav">
-        <li ng-repeat="item in nav.menu" ui-sref-active="active">
-            <a ui-sref="{{item.state}}">{{item.title}}</a>
-        </li>
-        <li ng-show="nav.isAdmin()" ui-sref-active="active"><a ui-sref="admin">Admin</a></li>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right">
-        <li ng-hide="isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
-        <li ng-hide="isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Login</a></li>
-        <li ng-show="isLoggedIn()"><p class="navbar-text">{{CurrentUser().name}}</p> </li>
-        <li ng-show="isLoggedIn()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span></a></li>
-        <li ng-show="isLoggedIn()"><a ui-sref="logout">Logout</a></li>
-      </ul>
-    </div>
-  </div>
+<div class="title col-xs-3 col-sm-3 col-md-3 col-lg-3">
+  <span ui-sref="main" class="hidden-xs hidden-sm" id="title1">ChemClave'17</span>
+  <h5 class="hidden-xs hidden-md hidden-lg" id="title1">ChemClave'17</h5>
+  <h6 class="hidden-xs hidden-sm" id="title2">Chemical Engineering Fest</h6>
 </div>
 
-<header class="row hidden-md hidden-lg">
-        <p id="logo">
-            <a ui-sref="main" title="ChemClave">ChemClave</a>
-        </p>
-        <a id="nav-toggle"></a>
-        <nav id="nav-menu">
-            <a id="navlogo" href="/"></a>
-            <a id="nav-close"><span></span><span></span></a>
-            <div class="modmenu">
-            <ul  id="menulist_root" class="mainlevel"
-            <li class="mainlevel first" id="menuitem_1"><a ui-sref="main" class="mainlevel" id="menulink_1"><span>Home</span></a></li>
-            <li class="mainlevel" id="menuitem_2"><a ui-sref="gallery" class="mainlevel" id="menulink_2"><span>Gallery</span></a></li>
-            <li class="mainlevel_current" id="menuitem_3"><a ui-sref="eventcategory" class="mainlevel_current" id="menulink_3"><span>Events</span></a></li>
-            <li class="mainlevel" id="menuitem_4"><a ui-sref="contactus" class="mainlevel" id="menulink_4"><span>Reach Us</span></a></li>
-            <li class="mainlevel" id="menuitem_5"><a ui-sref="signup" class="mainlevel" id="menulink_5"><span>Sign Up</span></a></li>
-            <li class="mainlevel" id="menuitem_6"><a ui-sref="login" class="mainlevel" id="menulink_6"><span>Login</span></a></li>
-            </ul>
-            </div>
-  
-            <div style="clear:both;"></div>
-        </nav>
+<div class="tabs aboutus hidden-xs hidden-sm col-sm-1 col-md-1 col-lg-1">
+ <span class="tab" ui-sref="aboutus">ABOUT US</span>
+</div>
 
+<div class="tabs events hidden-xs hidden-sm col-sm-1 col-md-1 col-lg-1">
+ <span class="tab" ui-sref="events">EVENTS</span>
+</div>
 
-    </header>
+<div class="tabs workshops hidden-xs hidden-sm col-sm-1 col-md-1 col-lg-1">
+ <span class="tab" ui-sref="workshops">WORKSHOPS</span>
+</div>
+
+<div class="tabs sponsors hidden-xs hidden-sm col-sm-1 col-md-1 col-lg-1">
+ <span class="tab" ui-sref="sponsors">SPONSORS</span>
+</div>
+
+<div class="tabs team hidden-xs hidden-sm col-sm-1 col-md-1 col-lg-1">
+ <span class="tab" ui-sref="team">TEAM</span>
+</div>
+
+  <img class="nav2" style="z-index:1;" src="../../assets/images/white_bg.png">
+  <img class="nav2" style="z-index:2;" src="../../assets/images/outline.png">
+  <img class="nav2" style="z-index:3;" src="../../assets/images/about.png">
+  <img class="nav2" style="z-index:4;" src="../../assets/images/events.png">
+  <img class="nav2" style="z-index:5;" src="../../assets/images/workshop.png">
+  <img class="nav2" style="z-index:6;" src="../../assets/images/spons.png">
+  <img class="nav2" style="z-index:7;" src="../../assets/images/contacts.png">
+  <img class="nav2" style="z-index:8;" src="../../assets/images/home.png"> 
