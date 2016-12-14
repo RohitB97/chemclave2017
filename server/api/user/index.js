@@ -31,5 +31,6 @@ router.put('/accomAccept/:id', controller.AcceptAccom);
 router.put('/accomPending/:id', controller.PendingAccom);
 router.get('/:id', auth.isAuthenticated(), controller.show);
 router.post('/', controller.create);
+router.post('/accomRequest/fileUpload', upload.single('payReceipt'), controller.upload);
 
 module.exports = router;

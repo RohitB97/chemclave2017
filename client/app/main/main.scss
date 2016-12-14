@@ -38,3 +38,26 @@
   top:65vh;
   right:15vw;
 }
+
+.main_content{
+  position: absolute;
+  z-index: 10;
+  min-height: 9vh;
+  max-height: 9vh;
+  overflow:auto;
+  top:86vh;
+  left:5vw;
+  color: #b70505;
+  font-family: 'Josefin Sans', sans-serif; 
+}
+
+.user_tabs{
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 30%;
+}
+
+.profile_content{
+  color: #b70505;
+  font-family: 'Josefin Sans', sans-serif;
+}

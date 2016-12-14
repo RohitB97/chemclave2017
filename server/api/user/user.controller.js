@@ -129,8 +129,12 @@ export function PendingAccom(req, res, next) {
 
 export function RequestAccom(req, res, next) {
 
-  return User.findByIdAndUpdate(req.params.id,{pdf_name:req.body}).exec()
+  return User.findByIdAndUpdate(req.params.id,{pdf_name:req.body.file}).exec()
     .catch(handleError(res));
+}
+
+export function upload(req,res){
+  return res.redirect('/');
 }
 
 /**

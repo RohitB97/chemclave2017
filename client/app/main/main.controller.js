@@ -4,27 +4,29 @@
 
   class MainController {
 
-    constructor($http, $scope, socket, Auth, $rootScope) {
+    constructor($http, $scope, socket, Auth, $rootScope, $cookies, $state){
+      $scope.LoggedIn = Auth.isLoggedIn;
+
+      $scope.goToSettings = function(){
+        $('#viewProfile').modal('hide');
+        setTimeout(function(){$state.go('settings');},1000);
+      };
       
-      
+      $scope.submit = function(){
+       
+       if(document.getElementById('upload').files.length > 0){
+
+          var id = $cookies.get('userId');
+          var file = document.getElementById('upload').files[0].name;
+
+          $http.put('api/users/accomRequest/'+ id, file).success(function(){
+            $http.put('api/users/accomPending/'+ id, id).success(function(){
+               $('#submit').click();
+            });
+          });
+        }    
+      };
     }
-
-    $onInit() {
-
-    }
-
-    /**addThing() {
-      if (this.newThing) {
-        this.$http.post('/api/things', {
-          name: this.newThing
-        });
-        this.newThing = '';
-      }
-    }
-
-    deleteThing(thing) {
-      this.$http.delete('/api/things/' + thing._id);
-    }**/
   }
 
   angular.module('chemclaveApp')

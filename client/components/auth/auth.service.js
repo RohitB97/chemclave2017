@@ -11,6 +11,10 @@
       currentUser = User.get();
     }
 
+    else {
+      $cookies.remove('userId');
+    }
+
     var Auth = {
 
       /**
@@ -35,6 +39,7 @@
           })
           .then(user => {
             safeCb(callback)(null, user);
+            $cookies.put('userId',currentUser._id);
             return user;
           })
           .catch(err => {
@@ -49,6 +54,7 @@
        */
       logout() {
         $cookies.remove('token');
+        $cookies.remove('userId');
         currentUser = {};
       },
 

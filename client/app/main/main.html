@@ -1,8 +1,7 @@
 <div class="main_page">
  <div class="title col-xs-3 col-sm-3 col-md-3 col-lg-3">
-   <span ui-sref="main" class="hidden-xs hidden-sm" id="title1">ChemClave'17</span><br>
-   <h5 class="hidden-xs hidden-md hidden-lg" id="title1">ChemClave'17</h5>
-   <span class="hidden-xs hidden-sm" id="title2">IIT Madras's Chemical Engineering Fest</h6>
+   <span ui-sref="main" class="hidden-xs title1">ChemClave'17</span><br>
+   <span class="hidden-xs title2">IIT Madras's Chemical Engineering Fest</span>
  </div>
  
  <div class="tabs aboutus_main hidden-xs hidden-sm col-sm-1 col-md-1 col-lg-1">
@@ -33,5 +32,109 @@
   <img class="nav1" style="z-index:6;" src="../../assets/images/spons.png">
   <img class="nav1" style="z-index:7;" src="../../assets/images/contacts.png">
   <img class="nav1" style="z-index:8;" src="../../assets/images/home.png">
-</div> 
+</div>
 
+<div class="container main_content">
+ 
+ <div class="row">
+  
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+   <span data-toggle="modal" data-target="#viewProfile" class="user_tabs"><span class="glyphicon glyphicon-user"></span> View Profile</span>
+  </div>
+
+  <div ng-show="LoggedIn()" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+   <span data-toggle="modal" data-target="#receiptUpload" class="user_tabs"><span class="glyphicon glyphicon-plus"></span> Apply for Accommodation</span>   
+  </div>
+ 
+ </div>
+
+</div>
+
+<!-- pay slip upload modal-->
+
+ <div id="receiptUpload" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+   <div class="modal-body">
+    <form method="POST" action="/api/users/accomRequest/fileUpload" enctype="multipart/form-data">
+     <div class="form-group">
+       <h1>Upload your payment receipt</h1>
+       <input id="upload" type="file" name="payReceipt">
+       <input ng-hide="true" id="submit" type="submit">
+     </div>  
+    </form>
+   </div>
+     <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal">Close</button>
+        <button ng-click="submit()" class="btn btn-primary">Upload</button>
+     </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- profile modal-->
+
+ <div id="viewProfile" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+     <div class="modal-body">
+      
+      <div class="row">
+       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <label><span class="glyphicon glyphicon-user"> Name</span></label><br>
+        <span></span> 
+       </div>
+
+       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <label><span class="glyphicon glyphicon-envelope"> Email</span></label><br>
+        <span></span> 
+       </div>
+      </div>
+ <hr>
+      <div class="row">
+       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <label><span class="glyphicon glyphicon-pushpin"> ChemClave ID</span></label><br>
+        <span></span> 
+       </div>
+
+       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <label><span class="glyphicon glyphicon-phone"> Mobile</span></label><br>
+        <span></span> 
+       </div>
+      </div>
+ <hr>
+      <div class="row">
+       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <label><span class="glyphicon glyphicon-home"> Accommodation</span></label><br>
+        <span></span> 
+       </div>
+
+       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <label><span class="glyphicon glyphicon-cog"> Settings</span></label><br>
+        <button class="btn btn-danger" ng-click="goToSettings()">Change Password</button> 
+       </div>
+      </div>
+ <hr>
+      <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <label><span class="glyphicon glyphicon-briefcase"> Events</span></label><br>
+        <div class="row">
+         
+         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <span></span>
+         </div>
+
+         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <button class="btn btn-danger" ng-click="goToSettings()">Cancel Registration</button>
+         </div>
+
+        </div>   
+       </div>
+      </div> 
+     
+     <div class="modal-footer">
+      <button class="btn btn-primary" data-dismiss="modal">Close</button>
+     </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->  
