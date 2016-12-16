@@ -76,29 +76,64 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   cursor:pointer;
 }
 
-.aboutus{
+.aboutus_tab{
   top:45vh;
   left: 15vw;
 }
 
-.events{
+.events_tab{
   top:20vh;
   left: 25vw;
 }
 
-.workshops{
+.workshops_tab{
   top:8vh;
-  left:45.5vw;
+  left:46vw;
 }
 
-.sponsors{
+.sponsors_tab{
   top:20vh;
   right:25vw;
 }
 
-.team{
+.team_tab{
   top:45vh;
   right:15vw;
+}
+
+.auth_tabs{
+  top:8vh;
+  right:0;
+}
+
+.aboutus_C{
+  top:43vh;
+  left: 12vw;
+  display:none;
+}
+
+.events_C{
+  top:20vh;
+  left: 18vw;
+  display:none;
+}
+
+.workshops_C{
+  top:5vh;
+  left:44vw;
+  display:none;
+}
+
+.sponsors_C{
+  top:20vh;
+  right:22vw;
+  display:none;
+}
+
+.team_C{
+  top:43vh;
+  right:16vw;
+  display:none;
 }
 
 /* navbar css code ends */

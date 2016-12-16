@@ -3,6 +3,16 @@
    <span ui-sref="main" class="hidden-xs title1">ChemClave'17</span><br>
    <span class="hidden-xs title2">IIT Madras's Chemical Engineering Fest</span>
  </div>
+
+ <div class="tabs auth_tabs hidden-xs hidden-sm col-md-4 col-lg-4">
+  <div class="login_tab col-md-6 col-lg-6">
+    <span class="tab" ui-sref="login"><img style="width:70%;height:70%;" src="../../assets/images/login_tab.png"></span>
+  </div>
+
+  <div class="signup_tab col-md-6 col-lg-6">
+    <span class="tab" ui-sref="signup"><img style="width:70%;height:70%;" src="../../assets/images/register.png"></span>
+   </div>
+</div> 
  
  <div class="tabs aboutus_main hidden-xs hidden-sm col-sm-1 col-md-1 col-lg-1">
   <span class="tab" ui-sref="aboutus">ABOUT US</span>
@@ -43,7 +53,9 @@
   </div>
 
   <div ng-show="LoggedIn()" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-   <span data-toggle="modal" data-target="#receiptUpload" class="user_tabs"><span class="glyphicon glyphicon-plus"></span> Apply for Accommodation</span>   
+   <span data-toggle="modal" data-target="#receiptUpload" class="user_tabs"><span class="glyphicon glyphicon-plus"></span> Apply for Accommodation</span>
+   <!--<span data-toggle="modal" data-target="#receiptUpload" class="user_tabs"><span class="glyphicon glyphicon-time"></span> Accommodation Pending</span>
+   <span data-toggle="modal" data-target="#receiptUpload" class="user_tabs"><span class="glyphicon glyphicon-ok"></span> Accommodation Accepted</span>-->   
   </div>
  
  </div>
@@ -56,7 +68,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
    <div class="modal-body">
-    <form method="POST" action="/api/users/accomRequest/fileUpload" enctype="multipart/form-data">
+   <form method="POST" action="/api/users/accomRequest/fileUpload" enctype="multipart/form-data">
      <div class="form-group">
        <h1>Upload your payment receipt</h1>
        <input id="upload" type="file" name="payReceipt">
