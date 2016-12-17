@@ -51,10 +51,38 @@
   font-family: 'Josefin Sans', sans-serif; 
 }
 
+.main_mobile_content{
+  position: absolute;
+  z-index: 10;
+  min-height: 9vh;
+  max-height: 9vh;
+  overflow:auto;
+  top:86vh;
+  left:10vw;
+  color: #b70505;
+  font-family: 'Josefin Sans', sans-serif; 
+}
+
 .user_tabs{
   cursor: pointer;
   font-size: 24px;
   margin-left: 30%;
+}
+
+.U_tabs{
+  font-size: 24px;
+  margin-left: 30%;
+}
+
+.mobile_tabs{
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 10%;
+}
+
+.mobileU_tabs{
+  font-size: 18px;
+  margin-left: 10%;
 }
 
 .profile_content{

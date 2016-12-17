@@ -5,6 +5,7 @@ class NavbarController {
 
   //start-non-standard
   constructor(Auth, $state) {
+    this.isCollapsed = true;
     this.isLoggedIn = Auth.isLoggedIn;
     this.isAdmin = Auth.isAdmin;
     this.CurrentUser = Auth.getCurrentUser;

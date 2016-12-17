@@ -44,7 +44,7 @@
   <img class="nav1" style="z-index:8;" src="../../assets/images/home.png">
 </div>
 
-<div class="container main_content">
+<div ng-show="Loggedin()" class="hidden-xs container main_content">
  
  <div class="row">
   
@@ -52,10 +52,28 @@
    <span data-toggle="modal" data-target="#viewProfile" class="user_tabs"><span class="glyphicon glyphicon-user"></span> View Profile</span>
   </div>
 
-  <div ng-show="LoggedIn()" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
    <span data-toggle="modal" data-target="#receiptUpload" class="user_tabs"><span class="glyphicon glyphicon-plus"></span> Apply for Accommodation</span>
-   <!--<span data-toggle="modal" data-target="#receiptUpload" class="user_tabs"><span class="glyphicon glyphicon-time"></span> Accommodation Pending</span>
-   <span data-toggle="modal" data-target="#receiptUpload" class="user_tabs"><span class="glyphicon glyphicon-ok"></span> Accommodation Accepted</span>-->   
+   <span class="U_tabs"><span class="glyphicon glyphicon-time"></span> Accommodation Pending</span>
+    <span class="U_tabs"><span class="glyphicon glyphicon-ok"></span> Accommodation Accepted</span>  
+  </div>
+ 
+ </div>
+
+</div>
+
+<div ng-show="LoggedIn()" class="visible-xs container main_mobile_content">
+ 
+ <div class="row">
+  
+  <div class="col-xs-6">
+   <span data-toggle="modal" data-target="#viewProfile" class="mobile_tabs"><span class="glyphicon glyphicon-user"></span> View Profile</span>
+  </div>
+
+  <div class="col-xs-6">
+   <span data-toggle="modal" data-target="#receiptUpload" class="mobile_tabs"><span class="glyphicon glyphicon-plus"></span> Apply for Accommodation</span>
+   <span class="mobileU_tabs"><span class="glyphicon glyphicon-time"></span> Accommodation Pending</span>
+    <span class="mobileU_tabs"><span class="glyphicon glyphicon-ok"></span> Accommodation Accepted</span>- 
   </div>
  
  </div>
@@ -64,7 +82,7 @@
 
 <!-- pay slip upload modal-->
 
- <div id="receiptUpload" class="modal fade" tabindex="-1" role="dialog">
+ <div id="receiptUpload" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
    <div class="modal-body">
@@ -86,10 +104,10 @@
 
 <!-- profile modal-->
 
- <div id="viewProfile" class="modal fade" tabindex="-1" role="dialog">
+ <div id="viewProfile" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-     <div class="modal-body">
+     <div class="hidden-xs hidden-sm modal-body">
       
       <div class="row">
        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -142,11 +160,28 @@
 
         </div>   
        </div>
-      </div> 
+      </div>
+     </div> 
+
+     <div class="hidden-md hidden-lg modal-body">
+      
+      <div class="row">
+       <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
+        <label><span class="glyphicon glyphicon-user"> Name</span></label><br>
+        <span></span> 
+       </div>
+  <hr>
+       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <label><span class="glyphicon glyphicon-pushpin"> ChemClave ID</span></label><br>
+        <span></span> 
+       </div>
+      </div>
+     </div>   
      
      <div class="modal-footer">
       <button class="btn btn-primary" data-dismiss="modal">Close</button>
      </div>
+    
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->  
