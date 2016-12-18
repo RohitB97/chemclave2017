@@ -4,7 +4,7 @@
 </div>
 
 <!-- texted tabs-->
-<div class="tabs hidden-xs hidden-sm auth_tabs col-md-4 col-lg-4">
+<div ng-show="!Loggedin()" class="tabs hidden-xs hidden-sm auth_tabs col-md-4 col-lg-4">
   <div class="login_tab col-md-6 col-lg-6">
     <span class="tab" ui-sref="login"><img style="width:70%;height:70%;" src="../../assets/images/login_tab.png"></span>
   </div>
@@ -12,7 +12,13 @@
   <div class="signup_tab col-md-6 col-lg-6">
     <span class="tab" ui-sref="signup"><img style="width:70%;height:70%;" src="../../assets/images/register.png"></span>
    </div>
-</div>   
+</div>
+
+<div ng-show="LoggedIn()" class="tabs auth_tabs hidden-xs hidden-sm col-md-2 col-lg-2">
+ <div class="col-md-12 col-lg-12">
+  <span class="tab" ui-sref="logout"><img style="width:70%;height:70%;" src="../../assets/images/logout.png"></span>
+ </div>
+</div>     
 
 <div class="tabs aboutus_tab hidden-xs hidden-sm col-md-1 col-lg-1">
  <span class="tab" ui-sref="aboutus">ABOUT US</span>
