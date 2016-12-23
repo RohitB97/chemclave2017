@@ -19,6 +19,15 @@ function handleError(res, statusCode) {
   };
 }
 
+function respondWithResult(res, statusCode) {
+  statusCode = statusCode || 200;
+  return function(entity) {
+    if (entity) {
+      res.status(statusCode).json(entity);
+    }
+  };
+}
+
 /**
  * Get list of users
  * restriction: 'admin'
@@ -32,7 +41,7 @@ export function Index(req, res) {
 }
 
 export function userCount(req, res) {
-  return User.find({}, '-salt -password').exec()
+  return User.find({role:'user'}, '-salt -password').exec()
     .then(users => {
       res.status(200).json(users);
     })
@@ -124,12 +133,14 @@ export function AcceptAccom(req, res, next) {
 export function PendingAccom(req, res, next) {
 
   return User.findByIdAndUpdate(req.params.id,{accomodation_status:"Pending",status_check:false}).exec()
+    .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
 export function RequestAccom(req, res, next) {
 
-  return User.findByIdAndUpdate(req.params.id,{pdf_name:req.body.file}).exec()
+  return User.findByIdAndUpdate(req.params.id,{pdf_name:req.body.name}).exec()
+    .then(respondWithResult(res))
     .catch(handleError(res));
 }
 

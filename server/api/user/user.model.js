@@ -15,7 +15,10 @@ var UserSchema = new Schema({
   city: String,
   mobile: Number,
   accomodation_status: String,
-  status_check: Boolean,
+  status_check: {
+     type: Boolean,
+     default: false
+  },
   events: Array, 
   email: {
     type: String,

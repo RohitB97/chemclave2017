@@ -3,22 +3,27 @@
 class SignupController {
   //end-non-standard
 
-  constructor(Auth, $state,$rootScope) {
+  constructor(Auth, $state, $rootScope, $http) {
       this.Auth = Auth;
       this.$state = $state;
       this.$rootScope = $rootScope;
+      var self = this;
+
+      $http.get("api/users/userCount").success(function(response){
+         var userCount = response.length;
+         self.signID = "CC17" + (1000 + userCount + 1).toString().slice(1);
+       });  
     }
     //start-non-standard
 
 
   register(form) {
     this.submitted = true;
-    this.user.ID = "CC17" + (1000 + this.$rootScope.userCount + 1).toString().slice(1);
-
+    
     if (form.$valid) {
       this.Auth.createUser({
           name: this.user.name,
-          ID: this.user.ID,
+          ID: this.signID,
           city: this.user.city,
           college: this.user.college,
           mobile: this.user.mobile,
@@ -27,7 +32,7 @@ class SignupController {
         })
         .then(() => {
           // Account created, redirect to home
-          this.$state.go('main');
+          this.$state.go('login');
         })
         .catch(err => {
           err = err.data;
@@ -40,6 +45,7 @@ class SignupController {
           });
         });
     }
+
   }
 }
 

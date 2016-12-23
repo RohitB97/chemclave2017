@@ -7,6 +7,8 @@
     constructor($http, $scope, socket, Auth, $rootScope, $cookies, $state){
       $scope.LoggedIn = Auth.isLoggedIn;
 
+      $scope.CurrentUser = Auth.getCurrentUser;
+
       $scope.goToSettings = function(){
         $('#viewProfile').modal('hide');
         setTimeout(function(){$state.go('settings');},1000);
@@ -19,10 +21,11 @@
           var id = $cookies.get('userId');
           var file = document.getElementById('upload').files[0].name;
 
-          $http.put('api/users/accomRequest/'+ id, file).success(function(){
-            $http.put('api/users/accomPending/'+ id, id).success(function(){
+          $http.put('api/users/accomRequest/'+ id, {name:file}).success(function(response){
+            $http.put('api/users/accomPending/'+ id, {}).success(function(response){
                $('#submit').click();
             });
+            console.log(response);
           });
         }    
       };

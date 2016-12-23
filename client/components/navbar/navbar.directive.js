@@ -13,4 +13,11 @@ angular.module('chemclaveApp')
     restrict: 'E',
     controller: 'NavbarController',
     controllerAs: 'nav'
-  }));  
+  }))
+
+  .directive('customnav', () => ({
+    templateUrl: 'components/navbar/customnav.html',
+    restrict: 'E',
+    controller: 'NavbarController',
+    controllerAs: 'nav'
+  })); 

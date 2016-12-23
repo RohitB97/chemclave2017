@@ -11,7 +11,7 @@ angular.module('chemclaveApp', ['chemclaveApp.auth', 'chemclaveApp.admin', 'chem
   })
 
   .run(function($rootScope,$http){
-     $http.get("api/users/userCount").success(function(response){
-         $rootScope.userCount = response.length;
-      });
+     $http.get("http://erp.chemclave.org/api/events/").success(function(response){
+         $rootScope.festEvents = response;
+     });
   }); 
