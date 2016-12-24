@@ -22,13 +22,13 @@ var router = new Router();
 
 router.get('/', auth.hasRole('admin'), controller.Index);
 router.get('/userCount', controller.userCount);
-router.get('/erp/getusers', controller.accomodationIndex);
+router.get('/erp/finance', controller.accomodationIndex);
 router.delete('/:id', auth.hasRole('admin'), controller.destroy);
 router.get('/me', auth.isAuthenticated(), controller.me);
 router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
 router.put('/accomRequest/:id', controller.RequestAccom);
 router.put('/accomAccept/:id', controller.AcceptAccom);
-router.put('/accomPending/:id', controller.PendingAccom);
+router.put('/accomReject/:id', controller.RejectAccom);
 router.get('/:id', auth.isAuthenticated(), controller.show);
 router.post('/', controller.create);
 router.post('/accomRequest/fileUpload', upload.single('payReceipt'), controller.upload);

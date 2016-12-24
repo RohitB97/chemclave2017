@@ -22,9 +22,7 @@
           var file = document.getElementById('upload').files[0].name;
 
           $http.put('api/users/accomRequest/'+ id, {name:file}).success(function(response){
-            $http.put('api/users/accomPending/'+ id, {}).success(function(response){
-               $('#submit').click();
-            });
+            $('#submit').click();
             console.log(response);
           });
         }    

@@ -49,7 +49,7 @@ export function userCount(req, res) {
 }
 
 export function accomodationIndex(req, res) {
-  return User.find({role:'user',$or:[{accomodation_status:'Pending'},{status_check:true}]}, '-salt -password').exec()
+  return User.find({role:'user',accomodation_status:'Pending'}, '-salt -password').exec()
     .then(users => {
       res.status(200).json(users);
     })
@@ -126,20 +126,21 @@ export function changePassword(req, res, next) {
 
 export function AcceptAccom(req, res, next) {
 
-  return User.findByIdAndUpdate(req.params.id,{accomodation_status:"Approved",status_check:true}).exec()
+  return User.findByIdAndUpdate(req.params.id,{accomodation_status:"Approved"}).exec()
+    .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-export function PendingAccom(req, res, next) {
+export function RejectAccom(req, res, next) {
 
-  return User.findByIdAndUpdate(req.params.id,{accomodation_status:"Pending",status_check:false}).exec()
+  return User.findByIdAndUpdate(req.params.id,{accomodation_status:"Rejected"}).exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
 export function RequestAccom(req, res, next) {
 
-  return User.findByIdAndUpdate(req.params.id,{pdf_name:req.body.name}).exec()
+  return User.findByIdAndUpdate(req.params.id,{pdf_name:req.body.name,accomodation_status:"Pending"}).exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }

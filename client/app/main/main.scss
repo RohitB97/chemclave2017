@@ -42,9 +42,6 @@
 .main_content{
   position: absolute;
   z-index: 10;
-  min-height: 9vh;
-  max-height: 9vh;
-  overflow:auto;
   top:86vh;
   left:5vw;
   color: #b70505;
@@ -55,11 +52,8 @@
 .main_mobile_content{
   position: absolute;
   z-index: 10;
-  min-height: 9vh;
-  max-height: 9vh;
-  overflow:auto;
   top:86vh;
-  left:10vw;
+  left: 5vw;
   color: #b70505;
   background-color: #fcc852;
   font-family: 'Josefin Sans', sans-serif; 
