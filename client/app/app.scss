@@ -19,7 +19,7 @@ body{
   position: absolute;
   z-index: 10;
   top:65vh;
-  left: 5vw;
+  width: 100vw;
   color: #b70505;
   background-color: #fcc852;
   font-family: 'Josefin Sans', sans-serif; 
@@ -28,7 +28,7 @@ body{
 .auth_pages{
   width:100vw;
   height:100vh;
-  position:absolute;
+  position:fixed;
   background-size: 100% 100%;
   background-image: url('../assets/images/main_half.jpg');
 }

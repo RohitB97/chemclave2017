@@ -48,6 +48,14 @@ export function userCount(req, res) {
     .catch(handleError(res));
 }
 
+export function accommodations(req, res) {
+  return User.find({role:'user',accomodation_status:'Approved'}, '-salt -password').exec()
+    .then(users => {
+      res.status(200).json(users);
+    })
+    .catch(handleError(res));
+}
+
 export function accomodationIndex(req, res) {
   return User.find({role:'user',accomodation_status:'Pending'}, '-salt -password').exec()
     .then(users => {
