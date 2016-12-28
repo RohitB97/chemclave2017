@@ -23,7 +23,23 @@
                   $state.go(is ? 'main' : 'login');
                 });
             });
-        } else {
+        }
+
+        if (typeof next.authenticate === 'number'){
+          Auth.isLoggedIn(_.noop)
+          .then(is => {
+           if(!is){
+             return;
+           }
+           
+           else
+             return $state.go('main');  
+
+          });
+
+        }
+
+         else {
           Auth.isLoggedIn(_.noop)
             .then(is => {
               if (is) {

@@ -6,7 +6,8 @@ angular.module('chemclaveApp')
         url: '/login',
         templateUrl: 'app/account/login/login.html',
         controller: 'LoginController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        authenticate: 1
       })
       .state('logout', {
         url: '/logout?referrer',
@@ -22,7 +23,8 @@ angular.module('chemclaveApp')
         url: '/signup',
         templateUrl: 'app/account/signup/signup.html',
         controller: 'SignupController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        authenticate: 1
       })
       .state('settings', {
         url: '/settings',
