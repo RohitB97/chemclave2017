@@ -1,46 +1,7 @@
 .team_page{
   width:100vw;
   height:100vh;
-  position:absolute;
+  position:fixed;
   background-size: 100% 100%;
   background-image: url('../assets/images/main_half.jpg');
-}
-
-#head-tile{
-	text-align:center;
-	font-size:80px;
-	font-family: 'adobe-garamond-pro',serif;
-}
-
-#sub-tile{
-	text-align:center;
-	font-family: 'adobe-garamond-pro',serif;
-}
-
-.teamContent{
-	margin-top:10vh;
-}
-
-.teamImage{
-	width:100%;
-}
-
-.detailsTile{
-	position: absolute;
-	left:30px;
-	bottom:10px;
-	font-family: 'Open Sans', Arial, Helvetica, Sans-serif;
-	font-size:15px;
-}
-
-.nameTile{
-  color: white;
-  text-transform: uppercase;
-  font-weight: 900;	
-}
-
-.designationTile{
-  color:white;
-  font-weight:300;
-  text-transform: uppercase;	
 }
