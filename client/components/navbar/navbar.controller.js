@@ -10,9 +10,9 @@ class NavbarController {
     this.isAdmin = Auth.isAdmin;
     this.CurrentUser = Auth.getCurrentUser;
 
-    $scope.hide = function(){return $state.current.name;}
+    $scope.hide = function(){return $state.current.name;};
 
-    var current = '#' + $state.current.name;
+    var current = '#' + $state.current.name + 'id';
 
      var state = $state.current.name + '_tab';
 
