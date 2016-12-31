@@ -4,19 +4,23 @@ class NavbarController {
   //end-non-standard
 
   //start-non-standard
-  constructor(Auth, $state) {
+  constructor(Auth, $state, $scope) {
     this.isCollapsed = true;
     this.isLoggedIn = Auth.isLoggedIn;
     this.isAdmin = Auth.isAdmin;
     this.CurrentUser = Auth.getCurrentUser;
 
-   var state = '.' + $state.current.name + '_tab';
+    $scope.hide = function(){return $state.current.name;}
 
-   $(state).css('display','none');
-   
-   var active_state = '.' + $state.current.name + '_C';
+    var current = '#' + $state.current.name;
 
-   $(active_state).css('display','inline');
+     var state = $state.current.name + '_tab';
+
+     var active_state = $state.current.name + '_C';
+
+     $(current).removeClass(state);
+
+     $(current).addClass(active_state);
 
   }
 

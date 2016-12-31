@@ -102,6 +102,8 @@ body{
 
 .tab{
   cursor:pointer;
+  margin-top: 10%;
+  text-align: center;
 }
 
 .aboutus_tab{
@@ -136,32 +138,37 @@ body{
 
 .aboutus_C{
   top:43vh;
-  left: 12vw;
-  display:none;
+  left: 13vw;
+  border-radius: 50%;
+  background-color: #a22756;
 }
 
 .events_C{
   top:20vh;
-  left: 18vw;
-  display:none;
+  left: 22vw;
+  border-radius: 50%;
+  background-color: #ef3f56;
 }
 
 .workshops_C{
-  top:5vh;
-  left:44vw;
-  display:none;
+  top:6vh;
+  left:46vw;
+  border-radius: 50%;
+  background-color: #f1573b;
 }
 
 .sponsors_C{
   top:20vh;
   right:22vw;
-  display:none;
+  border-radius: 50%;
+  background-color: #fa9f37;
 }
 
 .team_C{
   top:43vh;
   right:16vw;
-  display:none;
+  border-radius: 50%;
+  background-color: #fcc850;
 }
 
 /* navbar css code ends */
