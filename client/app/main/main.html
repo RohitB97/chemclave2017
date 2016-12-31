@@ -55,15 +55,15 @@
  <div class="row">
   
   <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-   <span data-toggle="modal" data-target="#viewProfile" class="user_tabs"><span class="glyphicon glyphicon-user"></span> View Profile</span>
+   <span data-toggle="modal" data-target="#viewProfile" class="user_tabs"><span class="glyphicon glyphicon-user"></span>&nbsp;View Profile</span>
   </div>
 
   <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-   <span ng-hide="CurrentUser().accomodation_status == 'Pending' || CurrentUser().accomodation_status == 'Accepted'" data-toggle="modal" data-target="#receiptUpload" class="user_tabs"><span class="glyphicon glyphicon-plus"></span> Apply for Accommodation</span>
+   <span ng-hide="CurrentUser().accomodation_status == 'Pending' || CurrentUser().accomodation_status == 'Accepted'" data-toggle="modal" data-target="#receiptUpload" class="user_tabs"><span class="glyphicon glyphicon-plus"></span>&nbsp;Apply for Accommodation</span>
 
-   <span ng-show="CurrentUser().accomodation_status == 'Pending'" class="U_tabs"><span class="glyphicon glyphicon-time"></span> Accommodation Pending</span>
+   <span ng-show="CurrentUser().accomodation_status == 'Pending'" class="U_tabs"><span class="glyphicon glyphicon-time"></span>&nbsp;Accommodation Pending</span>
    
-   <span ng-show="CurrentUser().accomodation_status == 'Accepted'" class="U_tabs"><span class="glyphicon glyphicon-ok"></span> Accommodation Accepted</span>
+   <span ng-show="CurrentUser().accomodation_status == 'Accepted'" class="U_tabs"><span class="glyphicon glyphicon-ok"></span>&nbsp;Accommodation Accepted</span>
 
   </div>
  
@@ -76,15 +76,15 @@
  <div class="row">
   
   <div class="col-xs-6">
-   <span data-toggle="modal" data-target="#viewProfile" class="mobile_tabs"><span class="glyphicon glyphicon-user"></span> View Profile</span>
+   <span data-toggle="modal" data-target="#viewProfile" class="mobile_tabs"><span class="glyphicon glyphicon-user"></span>&nbsp;View Profile</span>
   </div>
  
   <div class="col-xs-6"> 
-   <span ng-hide="CurrentUser().accomodation_status == 'Pending' || CurrentUser().accomodation_status == 'Accepted'" data-toggle="modal" data-target="#receiptUpload" class="mobile_tabs"><span class="glyphicon glyphicon-plus"></span> Apply for Accommodation</span>
+   <span ng-hide="CurrentUser().accomodation_status == 'Pending' || CurrentUser().accomodation_status == 'Accepted'" data-toggle="modal" data-target="#receiptUpload" class="mobile_tabs"><span class="glyphicon glyphicon-plus"></span>&nbsp;Apply for Accommodation</span>
 
-   <span ng-show="CurrentUser().accomodation_status == 'Pending'" class="mobileU_tabs"><span class="glyphicon glyphicon-time"></span> Accommodation Pending</span>
+   <span ng-show="CurrentUser().accomodation_status == 'Pending'" class="mobileU_tabs"><span class="glyphicon glyphicon-time"></span>&nbsp;Accommodation Pending</span>
    
-   <span ng-show="CurrentUser().accomodation_status == 'Accepted'" class="mobileU_tabs"><span class="glyphicon glyphicon-ok"></span> Accommodation Accepted</span>
+   <span ng-show="CurrentUser().accomodation_status == 'Accepted'" class="mobileU_tabs"><span class="glyphicon glyphicon-ok"></span>&nbsp;Accommodation Accepted</span>
   </div>  
  </div>
  
@@ -94,9 +94,9 @@
 
 <!-- pay slip upload modal-->
 
- <div id="receiptUpload" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+<div id="receiptUpload" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
+ <div class="modal-dialog" role="document">
+  <div class="modal-content custom_modal">
    <div class="modal-body">
    <form method="POST" action="/api/users/accomRequest/fileUpload" enctype="multipart/form-data">
      <div class="form-group">
@@ -118,48 +118,48 @@
 
  <div id="viewProfile" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
+    <div class="custom_modal modal-content">
      <div class="hidden-xs hidden-sm modal-body">
       
       <div class="row">
        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <label><span class="glyphicon glyphicon-user"> Name</span></label><br>
+        <label><span class="glyphicon glyphicon-user">&nbsp;Name</span></label><br>
         <span>{{CurrentUser().name}}</span> 
        </div>
 
        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <label><span class="glyphicon glyphicon-envelope"> Email</span></label><br>
+        <label><span class="glyphicon glyphicon-envelope">&nbsp;Email</span></label><br>
         <span>{{CurrentUser().email}}</span> 
        </div>
       </div>
  <hr>
       <div class="row">
        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <label><span class="glyphicon glyphicon-pushpin"> ChemClave ID</span></label><br>
+        <label><span class="glyphicon glyphicon-pushpin">&nbsp;ChemClave ID</span></label><br>
         <span>{{CurrentUser().ID}}</span> 
        </div>
 
        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <label><span class="glyphicon glyphicon-phone"> Mobile</span></label><br>
+        <label><span class="glyphicon glyphicon-phone">&nbsp;Mobile</span></label><br>
         <span>{{CurrentUser().mobile}}</span> 
        </div>
       </div>
  <hr>
       <div class="row">
        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <label><span class="glyphicon glyphicon-home"> Accommodation</span></label><br>
+        <label><span class="glyphicon glyphicon-home">&nbsp;Accommodation</span></label><br>
         <span>{{CurrentUser().accomodation_status}}</span> 
        </div>
 
        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <label><span class="glyphicon glyphicon-cog"> Settings</span></label><br>
+        <label><span class="glyphicon glyphicon-cog">&nbsp;Settings</span></label><br>
         <button class="btn btn-danger" ng-click="goToSettings()">Change Password</button> 
        </div>
       </div>
  <hr>
       <div class="row">
        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <label><span class="glyphicon glyphicon-briefcase"> Events</span></label><br>
+        <label><span class="glyphicon glyphicon-briefcase">&nbsp;Events</span></label><br>
         <div ng-repeat="event in CurrentUser().events" class="row">
          
          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -175,35 +175,35 @@
       
       <div class="row">
        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <label><span class="glyphicon glyphicon-user"> Name</span></label><br>
+        <label><span class="glyphicon glyphicon-user">&nbsp;Name</span></label><br>
         <span>{{CurrentUser().name}}</span> 
        </div>
       </div> 
 <hr>
       <div class="row">
        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <label><span class="glyphicon glyphicon-pushpin"> Chemclave ID</span></label><br>
+        <label><span class="glyphicon glyphicon-pushpin">&nbsp;Chemclave ID</span></label><br>
         <span>{{CurrentUser().ID}}</span> 
        </div>
       </div>
 <hr>
      <div class="row">
        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <label><span class="glyphicon glyphicon-home"> Accommodation</span></label><br>
+        <label><span class="glyphicon glyphicon-home">&nbsp;Accommodation</span></label><br>
         <span>{{CurrentUser().accomodation_status}}</span> 
        </div>
      </div>  
 <hr>
      <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <label><span class="glyphicon glyphicon-cog"> Settings</span></label><br>
+        <label><span class="glyphicon glyphicon-cog">&nbsp;Settings</span></label><br>
         <button class="btn btn-danger" ng-click="goToSettings()">Change Password</button> 
        </div>
      </div>
 <hr>
      <div class="row">
        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <label><span class="glyphicon glyphicon-briefcase"> Events</span></label><br>
+        <label><span class="glyphicon glyphicon-briefcase">&nbsp;Events</span></label><br>
          <div ng-repeat="event in CurrentUser().events" class="row">
          
          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

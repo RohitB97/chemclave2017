@@ -5,6 +5,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 @import '../bower_components/font-awesome/scss/font-awesome';
 
 @import "https://fonts.googleapis.com/css?family=Josefin+Sans";
+@import 'https://fonts.googleapis.com/css?family=Merriweather|Oswald|Alex+Brush';
 
 /**
  * App-wide Styles
@@ -28,12 +29,40 @@ body{
 .auth_pages{
   width:100vw;
   height:100vh;
-  position:fixed;
+  position:absolute;
   background-size: 100% 100%;
   background-image: url('../assets/images/main_half.jpg');
 }
 
 /* Navbar css code begins */
+
+.tempNav{
+  position:fixed;
+  z-index:20;
+  top:0;
+  left:0;
+  width:100vw;
+  height:5vh;
+  background-color: #1d2a3a;
+}
+
+.cap_toggle{
+  position: fixed;
+  z-index:20;
+  left:0vw;
+  top: 22vh;
+  width: 20vw;
+  height: 10vh;
+  background-color: rgb(241, 87, 59);
+  box-shadow: 0px 0px 20px 10px rgba(93, 183, 175, 0.88);
+  color: #fcc850;
+  font-size: 18px;
+  font-weight: 900;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  font-family: 'Alex Brush', sans-serif;
+}
 
 .nav2{
   position:absolute;

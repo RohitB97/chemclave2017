@@ -15,9 +15,30 @@ angular.module('chemclaveApp')
     controllerAs: 'nav'
   }))
 
-  .directive('customnav', () => ({
+  .directive('greeting', () => ({
     templateUrl: 'components/navbar/customnav.html',
     restrict: 'E',
-    controller: 'NavbarController',
+    controller: 'greetingController',
     controllerAs: 'nav'
-  })); 
+  }))
+
+  .controller('greetingController',['$state','$scope', function($state,$scope){
+       toastr.options = {
+       "closeButton": true,
+       "debug": false,
+       "newestOnTop": true,
+       "progressBar": false,
+       "positionClass": "toast-top-right",
+       "preventDuplicates": true,
+       "showDuration": "300",
+       "hideDuration": "1000",
+       "timeOut": "5000",
+       "showEasing": "swing",
+       "hideEasing": "linear",
+       "showMethod": "fadeIn",
+       "hideMethod": "fadeOut"
+      };
+
+      $scope.hide = function(){return $state.current.name;}
+  
+  }]); 

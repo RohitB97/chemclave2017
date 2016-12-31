@@ -4,7 +4,7 @@
 
 class CapComponent {
   constructor() {
-    this.message = 'Hello';
+    
   }
 }
 

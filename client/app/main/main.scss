@@ -1,7 +1,7 @@
 .main_page{
   width:100vw;
   height:100vh;
-  position:fixed;
+  position:absolute;
   background-size: 100% 100%;
   background-image: url('../assets/images/main.png');
 }
@@ -84,4 +84,11 @@
 .profile_content{
   color: #b70505;
   font-family: 'Josefin Sans', sans-serif;
+}
+
+.custom_modal{
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  box-shadow: 5px 5px 20px 10px #5cb85c;
 }
