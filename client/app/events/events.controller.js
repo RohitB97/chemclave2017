@@ -4,10 +4,28 @@
 
 class EventsComponent {
   constructor($scope,$http) {
-    $scope.categoryClick = function(){
-       
-    }
+    $scope.eventImages = [
+          'ChemEDebate',
+          'Censino',
+          'Paper&Posterpresentation',
+          'Cheminnovate',
+          'ProjectX',
+          'Disastersceneinvestigation',
+          'ChemicalEntrepreneurship',
+          'AquaRocket',
+          'ChemicalX',
+          'Openquiz',
+          'Puzzlechamp',
+          'Chemieconnexion',
+          'CheQ',
+          'ChemEDart',
+          'ChemAdmad',
+          'Treasurehunt'
+        ];
 
+    $http.get('http://erp.chemclave.org/api/events').success(function(response){
+    	$scope.festEvents = response;
+    });      
   }
 }
 

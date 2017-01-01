@@ -3,8 +3,19 @@
 (function(){
 
 class WorkshopsComponent {
-  constructor() {
-    this.message = 'Hello';
+  constructor($scope,$http) {
+    $scope.workshopImages = [
+     'AspenPlus+SimulationCompetition',
+     'Rprogramming+Competition',
+     'Comsolworkshop',
+     'ArtofResearchWriting',
+     'ForensicsWorkshop'
+    ];
+
+    $http.get('http://erp.chemclave.org/api/events').success(function(response){
+    	$scope.festWorkshops = response.slice(16);
+    });
+
   }
 }
 
