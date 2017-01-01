@@ -24,7 +24,7 @@ class EventsComponent {
         ];
 
     $http.get('http://erp.chemclave.org/api/events').success(function(response){
-    	$scope.festEvents = response;
+    	$scope.festEvents = response.slice(0,16);
     });      
   }
 }
