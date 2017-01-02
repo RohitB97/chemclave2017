@@ -42,6 +42,7 @@
           <a class="btn btn-primary btn-lg btn-register" ui-sref="signup">
             Register
           </a>
+           <!--<u style="font-size:16px;margin-left:5%;cursor:pointer;" data-toggle="modal" data-target="#forgotPassword">Forgot Password ?</u>-->
         </div>
       </form>
     </div>
@@ -49,3 +50,18 @@
   <hr>
  </div> 
 </div>
+
+<div id="forgotPassword" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
+ <div class="modal-dialog" role="document">
+  <div class="modal-content custom_modal">
+   <div class="modal-body">
+   <form method="POST" action="/api/users/accomRequest/fileUpload" enctype="multipart/form-data">  
+   </form>
+   </div>
+     <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal">Close</button>
+        <button ng-click="submit()" class="btn btn-primary">Submit</button>
+     </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
