@@ -11,5 +11,12 @@ angular.module('chemclaveApp', ['chemclaveApp.auth', 'chemclaveApp.admin', 'chem
   })
 
   .run(function($rootScope, $http){
-      
+   /*$(document).ready(function(){	
+  	var x = document.getElementsByClassName('tabs');
+  	console.log(x.length);
+  	 for(var i=0; i < x.length; i++){
+  	 	x[0].classList.add('anim');
+  	 }
+      //setTimeout(function(){$('.tabs').removeClass('anim');},8000);
+     });*/  
   }); 

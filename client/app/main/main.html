@@ -20,34 +20,34 @@
  </div>
 </div>   
  
- <div class="tabs aboutus_main hidden-xs hidden-sm col-sm-1 col-md-1 col-lg-1">
+ <div class="tabs anim aboutus_main hidden-xs hidden-sm col-sm-1 col-md-1 col-lg-1">
   <span class="tab" ui-sref="aboutus">ABOUT US</span>
  </div>
 
- <div class="tabs events_main hidden-xs hidden-sm col-sm-1 col-md-1 col-lg-1">
+ <div class="tabs anim events_main hidden-xs hidden-sm col-sm-1 col-md-1 col-lg-1">
   <span class="tab" ui-sref="events">EVENTS</span>
  </div>
 
- <div class="tabs workshops_main hidden-xs hidden-sm col-sm-1 col-md-1 col-lg-1">
+ <div class="tabs anim workshops_main hidden-xs hidden-sm col-sm-1 col-md-1 col-lg-1">
   <span class="tab" ui-sref="workshops">WORKSHOPS</span>
  </div>
 
- <div class="tabs sponsors_main hidden-xs hidden-sm col-sm-1 col-md-1 col-lg-1">
+ <div class="tabs anim sponsors_main hidden-xs hidden-sm col-sm-1 col-md-1 col-lg-1">
   <span class="tab" ui-sref="sponsors">SPONSORS</span>
  </div>
 
- <div class="tabs team_main hidden-xs hidden-sm col-sm-1 col-md-1 col-lg-1">
+ <div class="tabs anim team_main hidden-xs hidden-sm col-sm-1 col-md-1 col-lg-1">
   <span class="tab" ui-sref="team">OUR TEAM</span>
  </div>
 
-  <img class="nav1" style="z-index:1;" src="../../assets/images/white_bg.png">
-  <img class="nav1" style="z-index:2;" src="../../assets/images/outline.png">
-  <img class="nav1" style="z-index:3;" src="../../assets/images/about.png">
-  <img class="nav1" style="z-index:4;" src="../../assets/images/events.png">
-  <img class="nav1" style="z-index:5;" src="../../assets/images/workshop.png">
-  <img class="nav1" style="z-index:6;" src="../../assets/images/spons.png">
-  <img class="nav1" style="z-index:7;" src="../../assets/images/contacts.png">
-  <img class="nav1" style="z-index:8;" src="../../assets/images/home.png">
+  <img class="nav1 tab_bg" style="z-index:1;" src="../../assets/images/white_bg.png">
+  <img class="nav1 tab_bg" style="z-index:2;" src="../../assets/images/outline.png">
+  <img class="nav1 about_bar" style="z-index:3;" src="../../assets/images/about.png">
+  <img class="nav1 events_bar" style="z-index:4;" src="../../assets/images/events.png">
+  <img class="nav1 workshop_bar" style="z-index:5;" src="../../assets/images/workshop.png">
+  <img class="nav1 spons_bar" style="z-index:6;" src="../../assets/images/spons.png">
+  <img class="nav1 contacts_bar" style="z-index:7;" src="../../assets/images/contacts.png">
+  <img class="nav1 tab_bg" style="z-index:8;" src="../../assets/images/home.png">
 </div>
 
 <div ng-show="LoggedIn()" class="hidden-xs container main_content">
@@ -59,7 +59,7 @@
   </div>
 
   <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-   <span ng-hide="CurrentUser().accomodation_status == 'Pending' || CurrentUser().accomodation_status == 'Accepted'" data-toggle="modal" data-target="#receiptUpload" class="user_tabs"><span class="glyphicon glyphicon-plus"></span>&nbsp;Apply for Accommodation</span>
+   <span ng-hide="CurrentUser().accomodation_status == 'Pending' || CurrentUser().accomodation_status == 'Accepted'" data-toggle="modal" data-target="#accomRules" class="user_tabs"><span class="glyphicon glyphicon-plus"></span>&nbsp;Apply for Accommodation</span>
 
    <span ng-show="CurrentUser().accomodation_status == 'Pending'" class="U_tabs"><span class="glyphicon glyphicon-time"></span>&nbsp;Accommodation Pending</span>
    
@@ -80,7 +80,7 @@
   </div>
  
   <div class="col-xs-6"> 
-   <span ng-hide="CurrentUser().accomodation_status == 'Pending' || CurrentUser().accomodation_status == 'Accepted'" data-toggle="modal" data-target="#receiptUpload" class="mobile_tabs"><span class="glyphicon glyphicon-plus"></span>&nbsp;Apply for Accommodation</span>
+   <span ng-hide="CurrentUser().accomodation_status == 'Pending' || CurrentUser().accomodation_status == 'Accepted'" data-toggle="modal" data-target="#accomRules" class="mobile_tabs"><span class="glyphicon glyphicon-plus"></span>&nbsp;Apply for Accommodation</span>
 
    <span ng-show="CurrentUser().accomodation_status == 'Pending'" class="mobileU_tabs"><span class="glyphicon glyphicon-time"></span>&nbsp;Accommodation Pending</span>
    
@@ -92,16 +92,35 @@
 
 </div>
 
+
+<!--Accom rules modal-->
+
+<div id="accomRules" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
+ <div class="modal-dialog" role="document">
+  <div style="box-shadow: 5px 5px 20px 10px #cc3921;" class="modal-content custom_modal">
+   <div class="modal-body">
+    <h3>Accommodations will open soon</h3>  
+   </div>
+     <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal">Close</button>
+        <!--button data-toggle="modal" data-target="#receiptUpload" data-dismiss="modal" class="btn btn-primary">Proceed</button>-->
+     </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <!-- pay slip upload modal-->
 
 <div id="receiptUpload" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
  <div class="modal-dialog" role="document">
-  <div class="modal-content custom_modal">
+  <div style="box-shadow: 5px 5px 20px 10px #cc3921;" class="modal-content custom_modal">
    <div class="modal-body">
    <form method="POST" action="/api/users/accomRequest/fileUpload" enctype="multipart/form-data">
      <div class="form-group">
        <h1>Upload your payment receipt</h1>
-       <input id="upload" type="file" name="payReceipt">
+       <h4>** The file's name should be your chemclave ID (Ex: CC17***.pdf)</h4> 
+       <h4>** Only a PDF file must be uploaded</h4>
+       <input id="upload" type="file" name="payReceipt" accept=".pdf">
        <input ng-hide="true" id="submit" type="submit">
      </div>  
     </form>
@@ -118,7 +137,7 @@
 
  <div id="viewProfile" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="custom_modal modal-content">
+    <div style="box-shadow: 5px 5px 20px 10px #5cb85c;" class="custom_modal modal-content">
      <div class="hidden-xs hidden-sm modal-body">
       
       <div class="row">

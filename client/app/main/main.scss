@@ -90,5 +90,38 @@
   background-color: rgba(0,0,0,0.8);
   color: white;
   font-family: 'Josefin Sans', sans-serif;
-  box-shadow: 5px 5px 20px 10px #5cb85c;
+}
+
+.anim{
+  animation: fadeIn 7s linear;
+}
+
+.tab_bg{
+  animation: fadeIn 7s linear;
+}
+
+.about_bar{
+  animation: fadeIn 2s linear;
+}
+
+.spons_bar{
+  animation: fadeIn 5s linear;
+}
+
+.workshop_bar{
+  animation: fadeIn 4s linear;
+}
+
+.events_bar{
+  animation: fadeIn 3s linear;
+}
+
+.contacts_bar{
+  animation: fadeIn 6s linear;
+}
+
+@keyframes fadeIn{
+  0%{opacity:0;}
+  80%{opacity:0;}
+  100%{opacity:1;}
 }

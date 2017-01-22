@@ -1,6 +1,8 @@
 <div ng-hide="hide() == 'cap'" class="hidden-xs hidden-sm tempNav">
 </div>
 
-<div ng-hide="hide() == 'cap'" ui-sref="cap" class="hidden-xs hidden-sm cap_toggle">
- <p style="margin-top:10%;">Campus Ambassador Programme !</p> 
+<div ng-show="hide() == 'main'" ui-sref="cap" class="hidden-xs hidden-sm cap_toggle">
+ <p style="margin-top:5%;">Campus Ambassador Programme !</p> 
 </div>
+
+<span class="hidden-xs hidden-sm glyphicon glyphicon-home nav_icon" onclick="scrollTo(0,0);"></span>
