@@ -11,14 +11,14 @@
    <div class="col-md-1 col-lg-1"></div>
    <div style="max-height:40vh;overflow:auto;" class="col-md-8 col-lg-8">
    <h1>{{$index+1}}. {{event.name}}</h1>
-   <h2 style="text-align:center;color:#1d2a3a;">Event will be released soon</h2>	
+   <h3 data-toggle="modal" data-target="#eventDetails" ng-click="triggerEvent(event)" style="cursor:pointer;color:#1d2a3a;">{{event.event_info}}</h3>	
    </div>
   </div><br>
 
   <div class="row" ng-if="$odd">
    <div style="min-height:40vh;max-height:40vh;overflow:auto;" class="col-md-8 col-lg-8">
     <h1>{{$index+1}}. {{event.name}}</h1>
-    <h2 style="text-align:center;color:#1d2a3a;">Event will be released soon</h2>
+    <h3 data-toggle="modal" data-target="#eventDetails" ng-click="triggerEvent(event)" style="cursor:pointer;color:#1d2a3a;">{{event.event_info}}</h3>
    </div>
    <div class="col-md-1 col-lg-1"></div>
    <div class="col-md-3 col-lg-3">
@@ -43,8 +43,48 @@
    </div>
    <div class="row">
     <div class="col-xs-12 col-sm-12">
-     <h2 style="text-align:center;color:#1d2a3a;">Event will be released soon</h2>
+     <h3 data-toggle="modal" data-target="#eventDetails" style="cursor:pointer;color:#1d2a3a;">{{event.event_info}}</h3>
     </div>
    </div>
  </div>   
 </div>
+
+
+<div id="eventDetails" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
+ <div class="modal-dialog modal-lg" role="document">
+  <div style="box-shadow: 5px 5px 20px 10px #ffeb3b;" class="modal-content custom_modal">
+  <div class="modal-header">
+   <h4>{{currentEvent.name}}</h4>
+  </div>
+   <div class="modal-body">
+     <div>
+
+      <!-- Nav tabs -->
+       <ul class="nav nav-pills" role="tablist">
+        <li role="presentation" class="active"><a style="color:white;font-size:16px;" href="#description" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
+        <li role="presentation"><a style="color:white;font-size:16px;" href="#ps" aria-controls="profile" role="tab" data-toggle="tab">Problem Statement</a></li>
+        <li role="presentation"><a style="color:white;font-size:16px;" href="#prizemoney" aria-controls="messages" role="tab" data-toggle="tab">Prize Money</a></li>
+        <li role="presentation"><a style="color:white;font-size:16px;" href="#faq" aria-controls="settings" role="tab" data-toggle="tab">FAQ</a></li>
+       </ul>
+
+     <!-- Tab panes -->
+     <div style="color:#50ce02;" class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="description">
+        <h4>{{currentEvent.event_info}}</h4>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="ps">
+        <h4>Problem Statement will be released soon</h4>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="prizemoney">
+        <h4>Prize Money will be released soon</h4>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="faq">
+        <h4>Will be released soon</h4>
+      </div>
+     </div>
+
+    </div> 
+   </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

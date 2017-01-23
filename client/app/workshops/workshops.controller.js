@@ -16,6 +16,10 @@ class WorkshopsComponent {
     	$scope.festWorkshops = response.slice(16);
     });
 
+    $scope.triggerWorkshop = function(workshop){
+      $scope.currentWorkshop = workshop;
+    };
+
   }
 }
 
