@@ -7,6 +7,8 @@
     constructor($http, $scope, socket, Auth, $rootScope, $cookies, $state){
       $scope.LoggedIn = Auth.isLoggedIn;
 
+      console.log(screen.width);
+
       $scope.CurrentUser = Auth.getCurrentUser;
 
       $scope.goToSettings = function(){
