@@ -65,6 +65,7 @@
         <li role="presentation"><a style="color:white;font-size:16px;" href="#ps" aria-controls="profile" role="tab" data-toggle="tab">Problem Statement</a></li>
         <li role="presentation"><a style="color:white;font-size:16px;" href="#prizemoney" aria-controls="messages" role="tab" data-toggle="tab">Prize Money</a></li>
         <li role="presentation"><a style="color:white;font-size:16px;" href="#faq" aria-controls="settings" role="tab" data-toggle="tab">FAQ</a></li>
+        <li role="presentation"><a style="color:white;font-size:16px;" href="#registration" aria-controls="settings" role="tab" data-toggle="tab">Registration</a></li>
        </ul>
 
      <!-- Tab panes -->
@@ -80,6 +81,10 @@
       </div>
       <div role="tabpanel" class="tab-pane" id="faq">
         <h4>Will be released soon</h4>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="registration">
+        <h4 ng-hide="currentEvent.active">Registrations will open soon</h4>
+        <button ng-click="workshopRegister()" ng-show="currentEvent.active" class="btn btn-danger">Register</button>
       </div>
      </div>
 
