@@ -13,7 +13,7 @@ class WorkshopsComponent {
     ];
 
     $http.get('http://erp.chemclave.org/api/events').success(function(response){
-    	$scope.festWorkshops = response.slice(16);
+    	$scope.festWorkshops = response.slice(15);
     });
 
     $scope.triggerWorkshop = function(workshop){

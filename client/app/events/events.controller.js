@@ -17,14 +17,13 @@ class EventsComponent {
           'Openquiz',
           'Puzzlechamp',
           'Chemieconnexion',
-          'CheQ',
           'ChemEDart',
           'ChemAdmad',
           'Treasurehunt'
         ];
 
     $http.get('http://erp.chemclave.org/api/events').success(function(response){
-    	$scope.festEvents = response.slice(0,16);
+    	$scope.festEvents = response.slice(0,15);
     });
 
     $scope.triggerEvent = function(event){

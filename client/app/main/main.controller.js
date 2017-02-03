@@ -13,6 +13,8 @@
         $('#viewProfile').modal('hide');
         setTimeout(function(){$state.go('settings');},1000);
       };
+
+      //submit receipt
       
       $scope.submit = function(){
        
@@ -27,6 +29,9 @@
           });
         }    
       };
+
+     //pop up
+      setTimeout(function(){$('#popup').modal('show');},2000); 
     }
   }
 
