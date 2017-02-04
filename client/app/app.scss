@@ -13,39 +13,42 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 
 body{
    overflow-x:hidden;
-   background-color: #fed045;
 }
 
-.content{
-  position: absolute;
-  z-index: 10;
-  top:65vh;
-  width: 100vw;
-  color: #b70505;
-  background-color: #fed045;
-  font-family: 'Josefin Sans', sans-serif; 
+.heading{
+  font-family: 'Alex Brush', sans-serif;
+  color: #fcf8e3;
+  text-align:center;
+  font-size: 60px;
 }
+
+.line{
+   width: 30px;
+   height: 5px;
+   background-color: #fcf8e3;
+   margin: 6px 0;
+}
+
+/* auth pages*/
 
 .auth_pages{
   width:100vw;
   height:100vh;
-  position:absolute;
-  background-size: 100% 100%;
-  background-image: url('../assets/images/main_half.jpg');
-}
-
-/* Navbar css code begins */
-
-.tempNav{
+  z-index:-100;
   position:fixed;
-  z-index:20;
-  top:0;
-  left:0;
-  width:100vw;
-  height:5vh;
-  background-color: #1d2a3a;
+  background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url('../assets/images/home.jpg');
+  background-size: 100% 100%;
 }
 
+.auth_content{
+  position: absolute;
+  top:2vh;
+  left:3vw;
+  color: #fcf8e3;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+/* links css code begins */
 .cap_toggle{
   position: fixed;
   z-index:20;
@@ -62,131 +65,68 @@ body{
   font-family: 'Alex Brush', sans-serif;
 }
 
-.nav_icon{
-  position:fixed;
-  cursor: pointer;
-  color: #1d2a3a;
-  z-index:20;
-  right:1vw;
-  top:10vh;
-  font-size:24px;
-  animation: icon_fade 2s linear infinite alternate;
+/* links css code ends */
+
+/* navbar css */
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+    height: 0%;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
 
-@keyframes icon_fade{
-  0%{opacity:0;}
-  100%{opacity:1;}
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 10%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
 }
 
-.nav2{
-  position:absolute;
-  width:100%;
-  height:100%;
-  top:-21vh;
-  left:0;
+/* The navigation links inside the overlay */
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
 }
 
-.title{
-  position:absolute;
-  z-index:10;
-  top:8vh;
-  left:5vw;
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
 }
 
-.title1{
-  cursor: pointer;
-  font-size: 24px;
-  color:#c1b302;
-  font-family: 'Josefin Sans', sans-serif;
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
 }
 
-.title2{
-  color:white;
-  font-size:12px;
-  font-family: 'Josefin Sans', sans-serif;
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
 }
 
-.tabs{
-  z-index:10;
-  position:absolute;
-  color:white;
-  font-weight:bolder;
-  font-family: 'Josefin Sans', sans-serif;
-}
-
-.tab{
-  cursor:pointer;
-  margin-top: 10%;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.aboutus_tab{
-  top:45vh;
-  left: 15vw;
-}
-
-.events_tab{
-  top:20vh;
-  left: 25vw;
-}
-
-.workshops_tab{
-  top:7vh;
-  left:46.5vw;
-}
-
-.sponsors_tab{
-  top:20vh;
-  right:24vw;
-}
-
-.team_tab{
-  top:45vh;
-  right:15vw;
-}
-
-.auth_tabs{
-  top:8vh;
-  right:0;
-}
-
-.aboutus_C{
-  top:43vh;
-  left: 13vw;
-  border-radius: 40%;
-  background-color: #a22756;
-}
-
-.events_C{
-  top:20vh;
-  left: 22vw;
-  border-radius: 40%;
-  background-color: #ef3f56;
-}
-
-.workshops_C{
-  top:6vh;
-  left:46vw;
-  border-radius: 40%;
-  background-color: #f1573b;
-}
-
-.sponsors_C{
-  top:20vh;
-  right:22vw;
-  border-radius: 40%;
-  background-color: #fa9f37;
-}
-
-.team_C{
-  top:43vh;
-  right:16vw;
-  border-radius: 40%;
-  background-color: #fcc850;
-}
-
-/* navbar css code ends */
+/* navbar ends /*
 
 .browserupgrade {
   margin: 0.2em 0;
@@ -231,7 +171,6 @@ body{
 
 // Component styles are injected through grunt
 /* inject:scss */
-@import 'aboutus/aboutus.scss';
 @import 'admin/admin.scss';
 @import 'cap/cap.scss';
 @import 'events/events.scss';

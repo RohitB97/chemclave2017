@@ -2,8 +2,9 @@
 
 class SettingsController {
 
-  constructor(Auth) {
+  constructor(Auth,$scope) {
     this.Auth = Auth;
+    $scope.CurrentUser = Auth.getCurrentUser;
   }
 
   changePassword(form) {

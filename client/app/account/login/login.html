@@ -1,9 +1,10 @@
 <div class="auth_pages">
-<navbar></navbar>
 </div>
 
-<div class="content">
- <div class="container"><br>
+<navbar></navbar>
+
+<div class="auth_content container">
+ <h1 class="heading">Login</h1>
   <div class="row">
     <div class="col-sm-12">
       <form class="form" name="form" ng-submit="vm.login(form)" novalidate>
@@ -12,7 +13,7 @@
         <label>Email</label>
         <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-          <input type="email" name="email" class="form-control" ng-model="vm.user.email" required>
+          <input style="background: transparent;color: white;" type="email" name="email" class="form-control" ng-model="vm.user.email" required>
         </div>
         </div>
 
@@ -20,7 +21,7 @@
           <label>Password</label>
           <div class="input-group">
         <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-          <input type="password" name="password" class="form-control" ng-model="vm.user.password" required>
+          <input style="background: transparent;color: white;" type="password" name="password" class="form-control" ng-model="vm.user.password" required>
           </div>
         </div>
 
@@ -36,10 +37,10 @@
         </div>
 
         <div>
-          <button class="btn btn-success btn-lg btn-login" type="submit">
+          <button style="background:transparent;color:white;border:1px solid white;" class="btn btn-lg" type="submit">
             Login
           </button>
-          <a class="btn btn-primary btn-lg btn-register" ui-sref="signup">
+          <a style="background:transparent;color:white;border:1px solid white;" class="btn btn-lg" ui-sref="signup">
             Register
           </a>
            <!--<u style="font-size:16px;margin-left:5%;cursor:pointer;" data-toggle="modal" data-target="#forgotPassword">Forgot Password ?</u>-->
@@ -48,8 +49,7 @@
     </div>
   </div>
   <hr>
- </div> 
-</div>
+</div>  
 
 <div id="forgotPassword" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
  <div class="modal-dialog" role="document">

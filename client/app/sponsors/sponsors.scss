@@ -1,9 +1,10 @@
 .sponsors_page{
   width:100vw;
   height:100vh;
-  position:absolute;
+  z-index:-100;
+  position:fixed;
+  background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url('../assets/images/sponsors.jpg');
   background-size: 100% 100%;
-  background-image: url('../assets/images/main_half.jpg');
 }
 
 .spons_image{

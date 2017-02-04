@@ -1,20 +1,22 @@
 <div class="auth_pages">
-<navbar></navbar>
 </div>
 
+<navbar></navbar>
 
-<div class="container content">
+
+<div class="auth_content container">
+ <h1 class="heading">Change Password</h1>
   <div class="row">
-    <div class="col-sm-12">
+    <!--<div class="col-sm-12">
       <h1>Change Password</h1>
-    </div>
+    </div>-->
     <div class="col-sm-12">
       <form class="form" name="form" ng-submit="vm.changePassword(form)" novalidate>
 
         <div class="form-group">
           <label>Current Password</label>
 
-          <input type="password" name="password" class="form-control" ng-model="vm.user.oldPassword"
+          <input style="background: transparent;color: white;" type="password" name="password" class="form-control" ng-model="vm.user.oldPassword"
                  mongoose-error/>
           <p class="help-block" ng-show="form.password.$error.mongoose">
               {{ vm.errors.other }}
@@ -24,7 +26,7 @@
         <div class="form-group">
           <label>New Password</label>
 
-          <input type="password" name="newPassword" class="form-control" ng-model="vm.user.newPassword"
+          <input style="background: transparent;color: white;" type="password" name="newPassword" class="form-control" ng-model="vm.user.newPassword"
                  ng-minlength="3"
                  required/>
           <p class="help-block"
@@ -36,7 +38,7 @@
         <div class="form-group">
           <label>Confirm New Password</label>
 
-          <input type="password" name="confirmPassword" class="form-control" ng-model="vm.user.confirmPassword"
+          <input style="background: transparent;color: white;" type="password" name="confirmPassword" class="form-control" ng-model="vm.user.confirmPassword"
                  match="vm.user.newPassword"
                  ng-minlength="3"
                  required=""/>
@@ -49,9 +51,172 @@
 
         <p class="help-block"> {{ vm.message }} </p>
 
-        <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
+        <button style="background:transparent;color:white;border:1px solid white;" class="btn btn-lg" type="submit">Save changes</button>
       </form>
     </div>
   </div>
   <hr>
+
+  
+<!-- user tabs -->   
+
+<div class="container">
+ 
+ <div class="row">
+  
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+   <h3 data-toggle="modal" data-target="#viewProfile" style="text-align:center;cursor:pointer;"><span class="glyphicon glyphicon-user"></span>&nbsp;View Profile</h3>
+  </div>
+
+   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+    <h3 ng-hide="CurrentUser().accomodation_status == 'Pending' || CurrentUser().accomodation_status == 'Accepted'" data-toggle="modal" data-target="#accomRules" style="text-align:center;cursor:pointer;"><span class="glyphicon glyphicon-plus"></span>&nbsp;Apply for Accommodation</h3>
+
+    <h3 style="text-align:center;" ng-show="CurrentUser().accomodation_status == 'Pending'"><span class="glyphicon glyphicon-time"></span>&nbsp;Accommodation Pending</h3>
+   
+    <h3 style="text-align:center;" ng-show="CurrentUser().accomodation_status == 'Accepted'"><span class="glyphicon glyphicon-ok"></span>&nbsp;Accommodation Accepted</h3>
+
+   </div>
+ 
+   </div>
+
+  </div> 
+
 </div>
+
+<!--Accom rules modal-->
+
+<div id="accomRules" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
+ <div class="modal-dialog" role="document">
+  <div style="box-shadow: 5px 5px 20px 10px #cc3921;" class="modal-content custom_modal">
+   <div class="modal-body">
+    <h3>Accommodations will open soon</h3>  
+   </div>
+     <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal">Close</button>
+        <!--button data-toggle="modal" data-target="#receiptUpload" data-dismiss="modal" class="btn btn-primary">Proceed</button>-->
+     </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- pay slip upload modal-->
+
+<div id="receiptUpload" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
+ <div class="modal-dialog" role="document">
+  <div style="box-shadow: 5px 5px 20px 10px #cc3921;" class="modal-content custom_modal">
+   <div class="modal-body">
+   <form method="POST" action="/api/users/accomRequest/fileUpload" enctype="multipart/form-data">
+     <div class="form-group">
+       <h1>Upload your payment receipt</h1>
+       <h4>** The file's name should be your chemclave ID (Ex: CC17***.pdf)</h4> 
+       <h4>** Only a PDF file must be uploaded</h4>
+       <input id="upload" type="file" name="payReceipt" accept=".pdf">
+       <input ng-hide="true" id="submit" type="submit">
+     </div>  
+    </form>
+   </div>
+     <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal">Close</button>
+        <button ng-click="submit()" class="btn btn-primary">Upload</button>
+     </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- profile modal-->
+
+ <div id="viewProfile" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div style="box-shadow: 5px 5px 20px 10px #5cb85c;" class="custom_modal modal-content">
+     <div class="hidden-xs hidden-sm modal-body">
+      
+      <div class="row">
+       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <label><span class="glyphicon glyphicon-user">&nbsp;Name</span></label><br>
+        <span>{{CurrentUser().name}}</span> 
+       </div>
+
+       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <label><span class="glyphicon glyphicon-envelope">&nbsp;Email</span></label><br>
+        <span>{{CurrentUser().email}}</span> 
+       </div>
+      </div>
+ <hr>
+      <div class="row">
+       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <label><span class="glyphicon glyphicon-pushpin">&nbsp;ChemClave ID</span></label><br>
+        <span>{{CurrentUser().ID}}</span> 
+       </div>
+
+       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <label><span class="glyphicon glyphicon-phone">&nbsp;Mobile</span></label><br>
+        <span>{{CurrentUser().mobile}}</span> 
+       </div>
+      </div>
+ <hr>
+      <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <label><span class="glyphicon glyphicon-home">&nbsp;Accommodation</span></label><br>
+        <span>{{CurrentUser().accomodation_status}}</span> 
+       </div>
+      </div> 
+ <hr>
+      <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <label><span class="glyphicon glyphicon-briefcase">&nbsp;Events</span></label><br>
+        <div ng-repeat="event in CurrentUser().events" class="row">
+         
+         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <span>{{event}}</span>
+         </div>
+
+        </div>   
+       </div>
+      </div>
+     </div> 
+
+     <div class="hidden-md hidden-lg modal-body">
+      
+      <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <label><span class="glyphicon glyphicon-user">&nbsp;Name</span></label><br>
+        <span>{{CurrentUser().name}}</span> 
+       </div>
+      </div> 
+<hr>
+      <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <label><span class="glyphicon glyphicon-pushpin">&nbsp;Chemclave ID</span></label><br>
+        <span>{{CurrentUser().ID}}</span> 
+       </div>
+      </div>
+<hr>
+     <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <label><span class="glyphicon glyphicon-home">&nbsp;Accommodation</span></label><br>
+        <span>{{CurrentUser().accomodation_status}}</span> 
+       </div>
+     </div>  
+<hr>
+     <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <label><span class="glyphicon glyphicon-briefcase">&nbsp;Events</span></label><br>
+         <div ng-repeat="event in CurrentUser().events" class="row">
+         
+         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <span>{{event}}</span>
+         </div>
+
+        </div>
+       </div>
+     </div> 
+    </div>   
+     
+     <div class="modal-footer">
+      <button class="btn btn-primary" data-dismiss="modal">Close</button>
+     </div>
+    
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->  
+

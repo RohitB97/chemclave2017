@@ -12,15 +12,15 @@ class NavbarController {
 
     $scope.hide = function(){return $state.current.name;};
 
-    var current = '#' + $state.current.name + 'id';
+    /* Open when someone clicks on the span element */
+       $scope.openNav=function () {
+                 document.getElementById("myNav").style.height = "100%";
+                };
 
-     var state = $state.current.name + '_tab';
-
-     var active_state = $state.current.name + '_C';
-
-     $(current).removeClass(state);
-
-     $(current).addClass(active_state);
+/* Close when someone clicks on the "x" symbol inside the overlay */
+      $scope.closeNav=function () {
+                 document.getElementById("myNav").style.height = "0%";
+                }; 
 
   }
 

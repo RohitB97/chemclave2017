@@ -1,74 +1,33 @@
-<div class="title col-xs-3 col-sm-3 col-md-3 col-lg-3">
-  <span ui-sref="main" class="hidden-xs title1">ChemClave'17</span><br>
-  <span class="hidden-xs title2">IIT Madras's Chemical Engineering Fest</span>
+<div style="position:fixed;right:3vw;top:40px;z-index: 8999;cursor:pointer;" class="hidden-xs" type="button" ng-click="openNav()">
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
 </div>
 
-<!-- texted tabs-->
-<div ng-show="!nav.isLoggedIn()" class="tabs hidden-xs hidden-sm auth_tabs col-md-4 col-lg-4">
-  <div class="login_tab col-md-6 col-lg-6">
-    <span class="tab" ui-sref="login"><img style="width:70%;height:70%;" src="../../assets/images/login_tab.png"></span>
+<div style="position:fixed;right:5px;top:40px;z-index: 8999;cursor:pointer;" class="visible-xs" type="button" ng-click="openNav()">
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+</div>
+
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn" ng-click="closeNav()">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <a href="#" ui-sref='main'>Home</a>
+    <a href="#" ui-sref='events'>Events</a>
+    <a href="#" ui-sref='workshops'>Workshops</a>
+    <a href="#" ui-sref="sponsors">Sponsors</a>
+    <a href="#" ui-sref="team">Our Team</a>
+    <a class="hidden-md hidden-lg" href="#" ui-sref="cap">Ambassador</a>
+    <a href="#" ui-sref="login" ng-hide='nav.isLoggedIn()'>Login</a>
+    <a href="#" ui-sref="settings" ng-show="nav.isLoggedIn()">User Profile</a>
+    <a href="#" ui-sref="logout" ng-show="nav.isLoggedIn()">Logout</a>
   </div>
 
-  <div class="signup_tab col-md-6 col-lg-6">
-    <span class="tab" ui-sref="signup"><img style="width:70%;height:70%;" src="../../assets/images/register.png"></span>
-   </div>
 </div>
 
-<div ng-show="nav.isLoggedIn()" class="tabs auth_tabs hidden-xs hidden-sm col-md-2 col-lg-2">
- <div class="col-md-12 col-lg-12">
-  <span class="tab" ui-sref="logout"><img style="width:70%;height:70%;" src="../../assets/images/logout.png"></span>
- </div>
-</div>     
-
-<div id="aboutusid" class="tabs aboutus_tab hidden-xs hidden-sm">
- <p class="tab" ui-sref="aboutus">ABOUT US</p>
-</div>
-
-<div id="eventsid" class="tabs events_tab hidden-xs hidden-sm">
- <p class="tab" ui-sref="events">EVENTS</p>
-</div>
-
-<div id="workshopsid" class="tabs workshops_tab hidden-xs hidden-sm">
- <p class="tab" ui-sref="workshops">WORKSHOPS</p>
-</div>
-
-<div id="sponsorsid" class="tabs sponsors_tab hidden-xs hidden-sm">
- <p class="tab" ui-sref="sponsors">SPONSORS</p>
-</div>
-
-<div id="teamid" class="tabs team_tab hidden-xs hidden-sm">
- <p class="tab" ui-sref="team">OUR TEAM</p>
-</div>
-
-<!-- colored tabs-->
-
-<!--<div class="tabs aboutus_C hidden-xs hidden-sm col-md-1 col-lg-1">
- <span class="tab" ui-sref="aboutus"><img src="../../assets/images/aboutus.png"></span>
-</div>
-
-<div class="tabs events_C hidden-xs hidden-sm col-md-1 col-lg-1">
- <span class="tab" ui-sref="events"><img src="../../assets/images/events_tab.png"></span>
-</div>
-
-<div class="tabs workshops_C hidden-xs hidden-sm col-md-1 col-lg-1">
- <span class="tab" ui-sref="workshops"><img src="../../assets/images/workshops.png"></span>
-</div>
-
-<div class="tabs sponsors_C hidden-xs hidden-sm col-md-1 col-lg-1">
- <span class="tab" ui-sref="sponsors"><img src="../../assets/images/sponsors.png"></span>
-</div>
-
-<div class="tabs team_C hidden-xs hidden-sm col-md-1 col-lg-1">
- <span class="tab" ui-sref="team"><img src="../../assets/images/team.png"></span>
-</div>-->
-
-<!-- central images-->
-
-  <img class="nav2" style="z-index:1;" src="../../assets/images/white_bg.png">
-  <img class="nav2" style="z-index:2;" src="../../assets/images/outline.png">
-  <img class="nav2" style="z-index:3;" src="../../assets/images/about.png">
-  <img class="nav2" style="z-index:4;" src="../../assets/images/events.png">
-  <img class="nav2" style="z-index:5;" src="../../assets/images/workshop.png">
-  <img class="nav2" style="z-index:6;" src="../../assets/images/spons.png">
-  <img class="nav2" style="z-index:7;" src="../../assets/images/contacts.png">
-  <img class="nav2" style="z-index:8;" src="../../assets/images/home.png"> 

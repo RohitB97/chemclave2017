@@ -8,13 +8,6 @@ angular.module('chemclaveApp')
     controllerAs: 'nav'
   }))
 
-  .directive('mobilenav', () => ({
-    templateUrl: 'components/navbar/mobilenav.html',
-    restrict: 'E',
-    controller: 'NavbarController',
-    controllerAs: 'nav'
-  }))
-
   .directive('greeting', () => ({
     templateUrl: 'components/navbar/customnav.html',
     restrict: 'E',

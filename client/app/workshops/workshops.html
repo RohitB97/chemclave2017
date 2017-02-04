@@ -1,54 +1,15 @@
 <div class="workshops_page">
+</div>
+
 <navbar></navbar>
-</div>
 
-<div class="hidden-xs hidden-sm content">
- <div ng-repeat="workshop in festWorkshops"  class="container">
-  <div class="row" ng-if="$even">
-   <div class="col-md-3 col-lg-3">
-    <img style="width:100%;height:100%;" src="../../assets/images/{{workshopImages[$index]}}.png">
-   </div>
-   <div class="col-md-1 col-lg-1"></div>
-   <div style="max-height:40vh;overflow:auto;" class="col-md-8 col-lg-8">
-   <h1>{{$index+1}}. {{workshop.name}}</h1>
-   <h3 data-toggle="modal" data-target="#workshopDetails" ng-click="triggerWorkshop(workshop)" style="color:#1d2a3a;cursor:pointer;">{{workshop.event_info}}</h3>	
-   </div>
-  </div><br>
-
-  <div class="row" ng-if="$odd">
-   <div style="min-height:40vh;max-height:40vh;overflow:auto;" class="col-md-8 col-lg-8">
-    <h1>{{$index+1}}. {{workshop.name}}</h1>
-    <h3 data-toggle="modal" data-target="#workshopDetails" ng-click="triggerWorkshop(workshop)" style="color:#1d2a3a;cursor:pointer;">{{workshop.event_info}}</h3>
-   </div>
-   <div class="col-md-1 col-lg-1"></div>
-   <div class="col-md-3 col-lg-3">
-    <img style="width:100%;height:100%;" src="../../assets/images/{{workshopImages[$index]}}.png">
-   </div>
-  </div><br>
-
- </div>  
+<div class="auth_content container">
+ <h1 class="heading">Workshops</h1>
+ <div style="cursor:pointer;" ng-click="triggerWorkshop(workshop)" data-toggle="modal" data-target="#workshopDetails" ng-repeat="workshop in festWorkshops" class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+  <img style="width:100%;" src="../../assets/images/{{workshopImages[$index]}}.png">
+  <h4 style="text-align:center;">{{workshop.name}}</h4>
+ </div>
 </div> 
-
-
-<div class="hidden-md hidden-lg content">
- <div ng-repeat="workshop in festWorkshops" class="container">
-   <div class="row">
-    <div class="col-xs-12 col-sm-12">
-     <h1>{{$index+1}}. {{workshop.name}}</h1>
-    </div>
-   </div> 
-   <div class="row">
-    <div class="col-xs-12 col-sm-12">
-     <img style="width:100%;height:100%;" src="../../assets/images/{{workshopImages[$index]}}.png">
-    </div>
-   </div>
-   <div class="row">
-    <div class="col-xs-12 col-sm-12">
-     <h3 data-toggle="modal" data-target="#workshopDetails" ng-click="triggerWorkshop(workshop)" style="color:#1d2a3a;cursor:pointer;">{{workshop.event_info}}</h3>
-    </div>
-   </div>
- </div>   
-</div>
 
 <div id="workshopDetails" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
  <div class="modal-dialog modal-lg" role="document">
@@ -67,25 +28,29 @@
         <li role="presentation"><a style="color:white;font-size:16px;cursor:pointer;" data-target="#prizemoney" aria-controls="prizemoney" role="tab" data-toggle="tab">Prize Money</a></li>
         <li role="presentation"><a style="color:white;font-size:16px;cursor:pointer;" data-target="#faq" aria-controls="faq" role="tab" data-toggle="tab">FAQ</a></li>
         <li role="presentation"><a style="color:white;font-size:16px;cursor:pointer;" data-target="#registration" aria-controls="registration" role="tab" data-toggle="tab">Registration</a></li>
+        <li role="presentation"><a style="color:white;font-size:16px;cursor:pointer;" data-target="#contact" aria-controls="contact" role="tab" data-toggle="tab">Reach Us</a></li>
        </ul>
      <!-- Tab panes -->
      <div style="color:#50ce02;" class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="description">
+      <div style="background-color: transparent;" role="tabpanel" class="tab-pane active" id="description">
         <h4>{{currentWorkshop.event_info}}</h4>
       </div>
-      <div role="tabpanel" class="tab-pane" id="ps">
-        <h4>Problem Statement will be released soon</h4>
+      <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="ps">
+        <h4>{{currentWorkshop.ps}}</h4>
       </div>
-      <div role="tabpanel" class="tab-pane" id="rules">
-        <h4>Rules will be uploaded soon</h4>
+      <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="rules">
+        <h4>{{currentWorkshop.rules}}</h4>
       </div>
-      <div role="tabpanel" class="tab-pane" id="prizemoney">
-        <h4>Prize Money will be released soon</h4>
+    <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="prizemoney">
+        <h4>{{currentWorkshop.prizemoeny}}</h4>
       </div>
-      <div role="tabpanel" class="tab-pane" id="faq">
-        <h4>Will be released soon</h4>
+      <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="faq">
+        <h4>{{currentWorkshop.faq}}</h4>
       </div>
-      <div role="tabpanel" class="tab-pane" id="registration">
+      <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="contact">
+        <h4>{{currentWorkshop.contacts}}</h4>
+      </div>
+      <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="registration">
         <h4 ng-hide="currentEvent.active">Registrations will open soon</h4>
         <button ng-click="workshopRegister()" ng-show="currentEvent.active" class="btn btn-danger">Register</button>
       </div>

@@ -1,97 +1,31 @@
 <div class="main_page">
- <div class="title col-xs-3 col-sm-3 col-md-3 col-lg-3">
-   <span ui-sref="main" class="hidden-xs title1">ChemClave'17</span><br>
-   <span class="hidden-xs title2">IIT Madras's Chemical Engineering Fest</span>
- </div>
-
- <div ng-show="!LoggedIn()" class="tabs auth_tabs hidden-xs hidden-sm col-md-4 col-lg-4">
-  <div class="login_tab col-md-6 col-lg-6">
-    <span class="tab" ui-sref="login"><img style="width:70%;height:70%;" src="../../assets/images/login_tab.png"></span>
-  </div>
-
-  <div class="signup_tab col-md-6 col-lg-6">
-    <span class="tab" ui-sref="signup"><img style="width:70%;height:70%;" src="../../assets/images/register.png"></span>
-   </div>
 </div>
 
-<div ng-show="LoggedIn()" class="tabs auth_tabs hidden-xs hidden-sm col-md-2 col-lg-2">
- <div class="col-md-12 col-lg-12">
-  <span class="tab" ui-sref="logout"><img style="width:70%;height:70%;" src="../../assets/images/logout.png"></span>
- </div>
-</div>   
- 
- <div class="tabs anim aboutus_main hidden-xs hidden-sm">
-  <span class="tab" ui-sref="aboutus">ABOUT US</span>
- </div>
+<navbar></navbar>
 
- <div class="tabs anim events_main hidden-xs hidden-sm">
-  <span class="tab" ui-sref="events">EVENTS</span>
- </div>
-
- <div class="tabs anim workshops_main hidden-xs hidden-sm">
-  <span class="tab" ui-sref="workshops">WORKSHOPS</span>
- </div>
-
- <div class="tabs anim sponsors_main hidden-xs hidden-sm">
-  <span class="tab" ui-sref="sponsors">SPONSORS</span>
- </div>
-
- <div class="tabs anim team_main hidden-xs hidden-sm">
-  <span class="tab" ui-sref="team">OUR TEAM</span>
- </div>
-
-  <img class="nav1 tab_bg" style="z-index:1;" src="../../assets/images/white_bg.png">
-  <img class="nav1 tab_bg" style="z-index:2;" src="../../assets/images/outline.png">
-  <img class="nav1 about_bar" style="z-index:3;" src="../../assets/images/about.png">
-  <img class="nav1 events_bar" style="z-index:4;" src="../../assets/images/events.png">
-  <img class="nav1 workshop_bar" style="z-index:5;" src="../../assets/images/workshop.png">
-  <img class="nav1 spons_bar" style="z-index:6;" src="../../assets/images/spons.png">
-  <img class="nav1 contacts_bar" style="z-index:7;" src="../../assets/images/contacts.png">
-  <img class="nav1 tab_bg" style="z-index:8;" src="../../assets/images/home.png">
-</div>
-
-<div ng-show="LoggedIn()" class="hidden-xs container main_content">
- 
- <div class="row">
-  
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-   <span data-toggle="modal" data-target="#viewProfile" class="user_tabs"><span class="glyphicon glyphicon-user"></span>&nbsp;View Profile</span>
+<div class="auth_content container">
+ <div style="position: absolute;top:3vh;left:1vw;" class="hidden-xs col-sm-2 col-md-2 col-lg-2">
+  <div class="col-sm-6 col-md-6 col-lg-6">
+   <img src="../../assets/images/iitm.png" style="width:100%;">
   </div>
 
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-   <span ng-hide="CurrentUser().accomodation_status == 'Pending' || CurrentUser().accomodation_status == 'Accepted'" data-toggle="modal" data-target="#accomRules" class="user_tabs"><span class="glyphicon glyphicon-plus"></span>&nbsp;Apply for Accommodation</span>
-
-   <span ng-show="CurrentUser().accomodation_status == 'Pending'" class="U_tabs"><span class="glyphicon glyphicon-time"></span>&nbsp;Accommodation Pending</span>
-   
-   <span ng-show="CurrentUser().accomodation_status == 'Accepted'" class="U_tabs"><span class="glyphicon glyphicon-ok"></span>&nbsp;Accommodation Accepted</span>
-
+  <div class="col-sm-6 col-md-6 col-lg-6">
+   <img src="../../assets/images/ches.png" style="width:200%;">
   </div>
- 
- </div>
+ </div> 
+ <h1 class="heading">ChemClave</h1>
+ <h1 class="heading">2017</h1>
+      <h3 style="text-align: center;">
+      Greetings from Chemical Engineering Society (ChES)!
+      ChES in association with the Department of Chemical Engineering, IIT Madras is proud to present the 10th edition of its Annual Technical Festival ChemClave from March 3th - 5th, 2017. We call it our annual celebration of the Spirit of Chemical Engineering rather than just some annual technical fest. 
+    </h3>
 
+    <h3 style="text-align: center;">
+           Born in 2008, with the dream of promoting technology, scientific thinking and innovation in the field of Chemical Engineering, ChemClave has passed 9 golden editions and today it is successfully planning towards its 10th edition. It provides an opportunity to all the budding Chemical Engineers to compete, exchange ideas, collaborate and learn and of course have fun all under the same roof.We cordially invite you to take part in our fest and  boost your intellect.
+
+    </h3>     
 </div>
-
-<div ng-show="LoggedIn()" class="visible-xs container main_mobile_content">
  
- <div class="row">
-  
-  <div class="col-xs-6">
-   <span data-toggle="modal" data-target="#viewProfile" class="mobile_tabs"><span class="glyphicon glyphicon-user"></span>&nbsp;View Profile</span>
-  </div>
- 
-  <div class="col-xs-6"> 
-   <span ng-hide="CurrentUser().accomodation_status == 'Pending' || CurrentUser().accomodation_status == 'Accepted'" data-toggle="modal" data-target="#accomRules" class="mobile_tabs"><span class="glyphicon glyphicon-plus"></span>&nbsp;Apply for Accommodation</span>
-
-   <span ng-show="CurrentUser().accomodation_status == 'Pending'" class="mobileU_tabs"><span class="glyphicon glyphicon-time"></span>&nbsp;Accommodation Pending</span>
-   
-   <span ng-show="CurrentUser().accomodation_status == 'Accepted'" class="mobileU_tabs"><span class="glyphicon glyphicon-ok"></span>&nbsp;Accommodation Accepted</span>
-  </div>  
- </div>
- 
- </div>
-
-</div>
-
 <!--popup modal-->
 
 
@@ -110,152 +44,3 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-
-<!--Accom rules modal-->
-
-<div id="accomRules" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
- <div class="modal-dialog" role="document">
-  <div style="box-shadow: 5px 5px 20px 10px #cc3921;" class="modal-content custom_modal">
-   <div class="modal-body">
-    <h3>Accommodations will open soon</h3>  
-   </div>
-     <div class="modal-footer">
-        <button class="btn btn-default" data-dismiss="modal">Close</button>
-        <!--button data-toggle="modal" data-target="#receiptUpload" data-dismiss="modal" class="btn btn-primary">Proceed</button>-->
-     </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<!-- pay slip upload modal-->
-
-<div id="receiptUpload" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
- <div class="modal-dialog" role="document">
-  <div style="box-shadow: 5px 5px 20px 10px #cc3921;" class="modal-content custom_modal">
-   <div class="modal-body">
-   <form method="POST" action="/api/users/accomRequest/fileUpload" enctype="multipart/form-data">
-     <div class="form-group">
-       <h1>Upload your payment receipt</h1>
-       <h4>** The file's name should be your chemclave ID (Ex: CC17***.pdf)</h4> 
-       <h4>** Only a PDF file must be uploaded</h4>
-       <input id="upload" type="file" name="payReceipt" accept=".pdf">
-       <input ng-hide="true" id="submit" type="submit">
-     </div>  
-    </form>
-   </div>
-     <div class="modal-footer">
-        <button class="btn btn-default" data-dismiss="modal">Close</button>
-        <button ng-click="submit()" class="btn btn-primary">Upload</button>
-     </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<!-- profile modal-->
-
- <div id="viewProfile" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-lg" role="document">
-    <div style="box-shadow: 5px 5px 20px 10px #5cb85c;" class="custom_modal modal-content">
-     <div class="hidden-xs hidden-sm modal-body">
-      
-      <div class="row">
-       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <label><span class="glyphicon glyphicon-user">&nbsp;Name</span></label><br>
-        <span>{{CurrentUser().name}}</span> 
-       </div>
-
-       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <label><span class="glyphicon glyphicon-envelope">&nbsp;Email</span></label><br>
-        <span>{{CurrentUser().email}}</span> 
-       </div>
-      </div>
- <hr>
-      <div class="row">
-       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <label><span class="glyphicon glyphicon-pushpin">&nbsp;ChemClave ID</span></label><br>
-        <span>{{CurrentUser().ID}}</span> 
-       </div>
-
-       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <label><span class="glyphicon glyphicon-phone">&nbsp;Mobile</span></label><br>
-        <span>{{CurrentUser().mobile}}</span> 
-       </div>
-      </div>
- <hr>
-      <div class="row">
-       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <label><span class="glyphicon glyphicon-home">&nbsp;Accommodation</span></label><br>
-        <span>{{CurrentUser().accomodation_status}}</span> 
-       </div>
-
-       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <label><span class="glyphicon glyphicon-cog">&nbsp;Settings</span></label><br>
-        <button class="btn btn-danger" ng-click="goToSettings()">Change Password</button> 
-       </div>
-      </div>
- <hr>
-      <div class="row">
-       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <label><span class="glyphicon glyphicon-briefcase">&nbsp;Events</span></label><br>
-        <div ng-repeat="event in CurrentUser().events" class="row">
-         
-         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <span>{{event}}</span>
-         </div>
-
-        </div>   
-       </div>
-      </div>
-     </div> 
-
-     <div class="hidden-md hidden-lg modal-body">
-      
-      <div class="row">
-       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <label><span class="glyphicon glyphicon-user">&nbsp;Name</span></label><br>
-        <span>{{CurrentUser().name}}</span> 
-       </div>
-      </div> 
-<hr>
-      <div class="row">
-       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <label><span class="glyphicon glyphicon-pushpin">&nbsp;Chemclave ID</span></label><br>
-        <span>{{CurrentUser().ID}}</span> 
-       </div>
-      </div>
-<hr>
-     <div class="row">
-       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <label><span class="glyphicon glyphicon-home">&nbsp;Accommodation</span></label><br>
-        <span>{{CurrentUser().accomodation_status}}</span> 
-       </div>
-     </div>  
-<hr>
-     <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <label><span class="glyphicon glyphicon-cog">&nbsp;Settings</span></label><br>
-        <button class="btn btn-danger" ng-click="goToSettings()">Change Password</button> 
-       </div>
-     </div>
-<hr>
-     <div class="row">
-       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <label><span class="glyphicon glyphicon-briefcase">&nbsp;Events</span></label><br>
-         <div ng-repeat="event in CurrentUser().events" class="row">
-         
-         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <span>{{event}}</span>
-         </div>
-
-        </div>
-       </div>
-     </div> 
-    </div>   
-     
-     <div class="modal-footer">
-      <button class="btn btn-primary" data-dismiss="modal">Close</button>
-     </div>
-    
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->  

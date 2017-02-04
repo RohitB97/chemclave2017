@@ -31,7 +31,7 @@
       };
 
      //pop up
-      setTimeout(function(){$('#popup').modal('show');},2000); 
+      //setTimeout(function(){$('#popup').modal('show');},2000); 
     }
   }
 
