@@ -36,22 +36,26 @@
         <h4>{{currentWorkshop.event_info}}</h4>
       </div>
       <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="ps">
-        <h4>{{currentWorkshop.ps}}</h4>
+        <h4>{{currentWorkshop.problem_statement}}</h4>
       </div>
       <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="rules">
-        <h4>{{currentWorkshop.rules}}</h4>
+        <h4>{{currentWorkshop.rules}}</h4><br>
       </div>
     <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="incentives">
         <h4>{{currentWorkshop.incentives}}</h4>
       </div>
       <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="faq">
-        <h4>{{currentWorkshop.faq}}</h4>
+        <div ng-repeat="faq in currentWorkshop.QA"> 
+        <h4>Q. {{faq.question}}</h4>
+        <h4>A. {{faq.answer}}</h4><hr>
+       </div> 
       </div>
       <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="contact">
         <h4>{{currentWorkshop.contacts}}</h4>
       </div>
       <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="registration">
         <h4 ng-hide="currentEvent.active">Registrations will open soon</h4>
+        <h4 ng-show="currentEvent.active">{{currentWorkshop.registration_mode}}</h4><br>
         <button ng-click="workshopRegister()" ng-show="currentEvent.active" class="btn btn-danger">Register</button>
       </div>
      </div>
