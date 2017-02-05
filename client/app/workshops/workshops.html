@@ -42,7 +42,7 @@
         <h4 ng-repeat="rule in currentWorkshop.rules">{{rule}}</h4><br>
       </div>
     <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="incentives">
-        <h4 ng-repeat="incentive in currentWorkshop.incentives">{{incentive}}</h4>
+        <h4 ng-repeat="incentive in currentWorkshop.incentives">{{incentive}}</h4><br>
       </div>
       <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="faq">
         <div ng-repeat="faq in currentWorkshop.QA"> 
@@ -51,7 +51,7 @@
        </div> 
       </div>
       <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="contact">
-        <h4>{{currentWorkshop.contacts}}</h4>
+        <h4 ng-repeat="contact in currentWorkshop.contacts">{{contact}}</h4>
       </div>
       <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="registration">
         <h4 ng-hide="currentEvent.active">Registrations will open soon</h4>
