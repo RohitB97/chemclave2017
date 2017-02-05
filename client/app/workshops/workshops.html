@@ -46,17 +46,18 @@
       </div>
       <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="faq">
         <div ng-repeat="faq in currentWorkshop.QA"> 
-        <h4>Q. {{faq.question}}</h4>
-        <h4>A. {{faq.answer}}</h4><hr>
+        <h4>{{faq.question}}</h4>
+        <h4>{{faq.answer}}</h4><hr>
        </div> 
       </div>
       <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="contact">
         <h4 ng-repeat="contact in currentWorkshop.contacts">{{contact}}</h4>
       </div>
       <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="registration">
-        <h4 ng-hide="currentEvent.active">Registrations will open soon</h4>
-        <h4 ng-show="currentEvent.active">{{currentWorkshop.registration_mode}}</h4><br>
-        <button ng-click="workshopRegister()" ng-show="currentEvent.active" class="btn btn-danger">Register</button>
+        <h4 ng-show="!isLoggedIn() && currentWorkshop.active">Please login to register</h4>
+        <h4>{{currentWorkshop.registration_mode}}</h4>
+        <button ng-click="workshopRegister()" ng-show="isLoggedIn() && currentWorkshop.active && !Check(currentWorkshop.name)" class="btn btn-danger">Register</button>
+        <button ng-click="workshopUnregister()" ng-show="isLoggedIn() && currentWorkshop.active && Check(currentWorkshop.name)" class="btn btn-danger">Unregister</button>
       </div>
      </div>
 

@@ -153,6 +153,13 @@ export function RequestAccom(req, res, next) {
     .catch(handleError(res));
 }
 
+export function Register(req, res, next) {
+
+  return User.findByIdAndUpdate(req.params.id,req.body).exec()
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
 export function upload(req,res){
   return res.redirect('/');
 }

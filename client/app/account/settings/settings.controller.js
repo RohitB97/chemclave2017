@@ -15,7 +15,6 @@ class SettingsController {
 
           $http.put('api/users/accomRequest/'+ id, {name:file}).success(function(response){
             $('#submit').click();
-            console.log(response);
           });
         }    
       };
