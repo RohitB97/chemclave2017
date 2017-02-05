@@ -39,10 +39,10 @@
         <h4>{{currentWorkshop.problem_statement}}</h4>
       </div>
       <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="rules">
-        <h4>{{currentWorkshop.rules}}</h4><br>
+        <h4 ng-repeat="rule in currentWorkshop.rules">{{rule}}</h4><br>
       </div>
     <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="incentives">
-        <h4>{{currentWorkshop.incentives}}</h4>
+        <h4 ng-repeat="incentive in currentWorkshop.incentives">{{incentive}}</h4>
       </div>
       <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="faq">
         <div ng-repeat="faq in currentWorkshop.QA"> 
