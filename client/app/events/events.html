@@ -41,16 +41,20 @@
         <h4>{{currentEvent.ps}}</h4>
       </div>
        <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="rules">
-        <h4 ng-repeat="rule in currentEvent.rules">{{rule}}</h4>
+        <h4 ng-repeat="rule in currentEvent.rules">{{rule}}</h4><br>
       </div>
      <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="prizemoney">
         <h4 ng-repeat="pm in currentEvent.prizemoney">{{pm}}</h4>
       </div>
       <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="faq">
-        <h4>{{currentEvent.faq}}</h4>
+       <div ng-repeat="faq in currentEvent.QA"> 
+        <h4>Q. {{faq.question}}</h4>
+        <h4>A. {{faq.answer}}</h4><hr>
+       </div> 
       </div>
       <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="registration">
         <h4 ng-hide="currentEvent.active">Registrations will open soon</h4>
+        <h4 ng-show="currentEvent.active">{{currentEvent.registration_mode}}</h4><br>
         <button ng-click="eventRegister()" ng-show="currentEvent.active" class="btn btn-danger">Register</button>
       </div>
       <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="contact">
