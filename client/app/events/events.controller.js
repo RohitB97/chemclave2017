@@ -34,6 +34,9 @@ class EventsComponent {
     };
 
     $scope.Check = function(name){
+
+     if(Auth.isLoggedIn())
+     { 
       function checkName(key){
         return key==name;
       };
@@ -43,7 +46,8 @@ class EventsComponent {
       if(index == -1)
        return false;
       else
-       return true;     
+       return true;
+     }       
     };
 
     function eventCheck(event){
