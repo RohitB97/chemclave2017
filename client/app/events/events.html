@@ -53,8 +53,8 @@
        </div> 
       </div>
       <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="registration">
-        <h4 ng-show="!isLoggedIn() && currentEvent.active">Please login to register</h4>
         <h4>{{currentEvent.registration_mode}}</h4>
+        <h4 ng-show="!isLoggedIn() && currentEvent.active">Please login to register</h4>
         <button ng-click="eventRegister()" ng-show="isLoggedIn() && currentEvent.active && !Check(currentEvent.name)" class="btn btn-danger">Register</button>
         <button ng-click="eventUnregister()" ng-show="!isLoggedIn() && currentEvent.active && Check(currentEvent.name)" class="btn btn-danger">Unregister</button>
       </div>

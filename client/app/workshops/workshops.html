@@ -54,8 +54,8 @@
         <h4 ng-repeat="contact in currentWorkshop.contacts">{{contact}}</h4>
       </div>
       <div style="background-color: transparent;" role="tabpanel" class="tab-pane" id="registration">
-        <h4 ng-show="!isLoggedIn() && currentWorkshop.active">Please login to register</h4>
         <h4>{{currentWorkshop.registration_mode}}</h4>
+        <h4 ng-show="!isLoggedIn() && currentWorkshop.active">Please login to register</h4>
         <button ng-click="workshopRegister()" ng-show="isLoggedIn() && currentWorkshop.active && !Check(currentWorkshop.name)" class="btn btn-danger">Register</button>
         <button ng-click="workshopUnregister()" ng-show="isLoggedIn() && currentWorkshop.active && Check(currentWorkshop.name)" class="btn btn-danger">Unregister</button>
       </div>
