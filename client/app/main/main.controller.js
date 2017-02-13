@@ -3,9 +3,10 @@
 (function() {
 
   class MainController {
-
-    constructor(){
-       
+   constructor($scope){
+       $scope.techotron = function(){
+          open("http://www.techtrontechnologies.com/workshops@iit-madras.html");
+       };
     }
   }
 

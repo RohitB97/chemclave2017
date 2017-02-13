@@ -5,12 +5,16 @@
 
 <div class="auth_content container">
  <h1 class="heading">Workshops</h1>
+ <div class="visible-xs col-xs-12" ng-click="techotron()">
+   <h3 style="text-align:center;border:3px solid white;cursor:pointer;" ng-click="techotron()">Click here to Register for Techotron Workshops</h3><br>
+ </div>
  <div style="cursor:pointer;" ng-click="triggerWorkshop(workshop)" data-toggle="modal" data-target="#workshopDetails" ng-repeat="workshop in festWorkshops" class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
   <img style="width:100%;" src="../../assets/images/{{workshopImages[$index]}}.png">
   <h4 style="text-align:center;">{{workshop.name}}</h4>
  </div>
 </div> 
 
+<!--modals-->
 <div id="workshopDetails" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
  <div class="modal-dialog modal-lg" role="document">
   <div style="box-shadow: 5px 5px 20px 10px #ffeb3b;" class="modal-content custom_modal">

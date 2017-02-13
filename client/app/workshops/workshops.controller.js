@@ -76,6 +76,10 @@ class WorkshopsComponent {
             $('#workshopDetails').modal('hide');
          });
       });
+    };
+
+    $scope.techotron = function(){
+      open("http://www.techtrontechnologies.com/workshops@iit-madras.html");
     }; 
 
   }
