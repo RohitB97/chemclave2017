@@ -15,7 +15,7 @@
  </div> 
   <h1 class="heading">ChemClave</h1>
   <h1 class="heading">2017</h1>
-      <h3 style="text-align: center;">
+    <h3 style="text-align: center;">
       Greetings from Chemical Engineering Society (ChES)!
       ChES in association with the Department of Chemical Engineering, IIT Madras is proud to present the 10th edition of its Annual Technical Festival ChemClave from March 3th - 5th, 2017. We call it our annual celebration of the Spirit of Chemical Engineering rather than just some annual technical fest. 
     </h3>
@@ -33,7 +33,7 @@
 <!--popup modal-->
 
 
-<div id="popup" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
+<div id="eventpayment" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
  <div class="modal-dialog" role="document">
   <div style="box-shadow: 5px 5px 20px 10px #cc3921;" class="modal-content custom_modal">
    <div class="modal-body">
@@ -43,6 +43,23 @@
    </div>
      <div class="modal-footer">
         <button class="btn btn-default" data-dismiss="modal">Pay Online</button>
+     </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- accomprompt-->
+
+<div id="accomprompt" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
+ <div class="modal-dialog" role="document">
+  <div style="box-shadow:5px 5px 20px 10px #cc3921;" class="modal-content custom_modal">
+   <div class="modal-body">
+    <h3>Do you wish to request for accommodation in IIT Madras during your stay for chemclave ?</h3>
+   </div>
+     <div class="modal-footer">
+        <button class="btn btn-danger" ng-click="accomresult('true')" data-dismiss="modal">Yes</button>
+        <button class="btn btn-primary" ng-click="accomresult('false')" data-dismiss="modal">No</button>
+        <button class="btn btn-default" data-dismiss="modal">Remind me later</button>
      </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

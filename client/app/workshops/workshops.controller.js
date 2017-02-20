@@ -59,6 +59,7 @@ class WorkshopsComponent {
          $http.put('api/users/register/'+$scope.participant()._id, $scope.participant())
          .success(function(response){
             $('#workshopDetails').modal('hide');
+            location.reload();
          });
       });
     };
@@ -74,6 +75,7 @@ class WorkshopsComponent {
          $http.put('api/users/register/'+$scope.participant()._id, $scope.participant())
          .success(function(response){
             $('#workshopDetails').modal('hide');
+            location.reload();
          });
       });
     };

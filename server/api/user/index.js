@@ -28,6 +28,7 @@ router.delete('/:id', auth.hasRole('admin'), controller.destroy);
 router.get('/me', auth.isAuthenticated(), controller.me);
 router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
 router.put('/register/:id', auth.isAuthenticated(), controller.Register);
+router.put('/interest/:id',auth.isAuthenticated(), controller.interest);
 router.put('/accomRequest/:id', auth.isAuthenticated(), controller.RequestAccom);
 router.put('/accomAccept/:id', controller.AcceptAccom);
 router.put('/accomReject/:id', controller.RejectAccom);

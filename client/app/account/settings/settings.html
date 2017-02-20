@@ -69,7 +69,7 @@
   </div>
 
    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-    <h3 ng-hide="CurrentUser().accomodation_status == 'Pending' || CurrentUser().accomodation_status == 'Accepted'" data-toggle="modal" data-target="#accomRules" style="text-align:center;cursor:pointer;"><span class="glyphicon glyphicon-plus"></span>&nbsp;Apply for Accommodation</h3>
+    <h3 ng-hide="CurrentUser().accomodation_status == 'Pending' || CurrentUser().accomodation_status == 'Accepted' || CurrentUser().accomodation_interest != 'true'" data-toggle="modal" data-target="#accomRules" style="text-align:center;cursor:pointer;"><span class="glyphicon glyphicon-plus"></span>&nbsp;Apply for Accommodation</h3>
 
     <h3 style="text-align:center;" ng-show="CurrentUser().accomodation_status == 'Pending'"><span class="glyphicon glyphicon-time"></span>&nbsp;Accommodation Pending</h3>
    
@@ -89,7 +89,7 @@
  <div class="modal-dialog" role="document">
   <div style="box-shadow: 5px 5px 20px 10px #cc3921;" class="modal-content custom_modal">
    <div class="modal-body">
-    <h3>Accommodations will open soon</h3>  
+    <h3>Payment procedure for accommodation will be uploaded soon</h3>  
    </div>
      <div class="modal-footer">
         <button class="btn btn-default" data-dismiss="modal">Close</button>

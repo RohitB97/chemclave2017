@@ -55,7 +55,7 @@ class EventsComponent {
     };
 
     function participantCheck(user){
-      return user.ID!=$scope.participant().ID;
+      return user.name!=$scope.participant().name;
     };
 
     //event register
@@ -69,6 +69,7 @@ class EventsComponent {
          $http.put('api/users/register/'+$scope.participant()._id, $scope.participant())
          .success(function(response){
             $('#eventDetails').modal('hide');
+            location.reload();
          });
       });
     };
@@ -84,6 +85,7 @@ class EventsComponent {
          $http.put('api/users/register/'+$scope.participant()._id, $scope.participant())
          .success(function(response){
             $('#eventDetails').modal('hide');
+            location.reload();
          });
       });
     };       

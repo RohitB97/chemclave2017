@@ -48,8 +48,14 @@ export function userCount(req, res) {
     .catch(handleError(res));
 }
 
+export function interest(req,res){
+  return User.findByIdAndUpdate(req.params.id,{accomodation_interest:req.body.value}).exec()
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
 export function accommodations(req, res) {
-  return User.find({role:'user',accomodation_status:'Approved'}, '-salt -password').exec()
+  return User.find({role:'user',accomodation_interest:'true'}, '-salt -password').exec()
     .then(users => {
       res.status(200).json(users);
     })
