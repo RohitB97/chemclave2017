@@ -15,6 +15,9 @@
  </div> 
   <h1 class="heading">ChemClave</h1>
   <h1 class="heading">2017</h1>
+   <div class="visible-xs col-xs-12 techotron" data-toggle="modal" data-target="#eventpayment">
+     <h3 style="text-align:center;">Instructions for payment, to participate in ChemClave Events & Workshops<br><br>Click here!</h3>
+   </div>
     <h3 style="text-align: center;">
       Greetings from Chemical Engineering Society (ChES)!
       ChES in association with the Department of Chemical Engineering, IIT Madras is proud to present the 10th edition of its Annual Technical Festival ChemClave from March 3th - 5th, 2017. We call it our annual celebration of the Spirit of Chemical Engineering rather than just some annual technical fest. 
@@ -26,9 +29,16 @@
     </h3>
 </div>
 
-<div class="hidden-xs col-sm-4 col-md-6 col-lg-6 techotron" ng-click="techotron()">
-  <h2 style="text-align:center;">Click here to Register for Techotron Workshops</h2>
-</div>
+ <div style="position:absolute;left:1vw;bottom:15vh;" class="row">
+   <div class="hidden-xs col-sm-12 col-md-12 col-lg-12 techotron" data-toggle="modal" data-target="#eventpayment">
+    <h3 style="text-align:center;">Instructions for payment, to participate in ChemClave Events & Workshops</h3>
+   </div>
+ </div>
+ <div style="position:absolute;left:1vw;bottom:0vh;" class="row">  
+  <div class="hidden-xs col-sm-12 col-md-12 col-lg-12 techotron" ng-click="techotron()">
+    <h3 style="text-align:center;">Click here to Register for Techtron Workshops</h3>
+   </div>
+ </div>  
  
 <!--popup modal-->
 
@@ -37,12 +47,12 @@
  <div class="modal-dialog" role="document">
   <div style="box-shadow: 5px 5px 20px 10px #cc3921;" class="modal-content custom_modal">
    <div class="modal-body">
-    <h3>Kindly pay the registration fee of Rs.200 to participate in all the ChemClave events</h3>
-    <h3>Payment can be made online or during ChemClave</h3><br>
-    <h4>Note: In case of online payment, the payment receipt should be submitted during ChemClave</h4>
+    <h3>Kindly pay the registration fee of Rs.200 to participate in all the ChemClave events and workshops</h3><br>
+    <h3>NOTE: The downloaded payment receipt must be submitted during ChemClave</h3>
+    <h2><a target="_blank" href="../../assets/files/registrations.pdf">Payment Procedure</a></h2>
    </div>
      <div class="modal-footer">
-        <button class="btn btn-default" data-dismiss="modal">Pay Online</button>
+        <button class="btn btn-default" data-dismiss="modal">Close</button>
      </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
