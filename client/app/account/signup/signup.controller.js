@@ -7,23 +7,17 @@ class SignupController {
       this.Auth = Auth;
       this.$state = $state;
       this.$rootScope = $rootScope;
-      var self = this;
-
-      $http.get("api/users/userCount").success(function(response){
-         var userCount = response.length;
-         self.signID = "CC17" + (1000 + userCount + 1).toString().slice(1);
-       });  
+      this.$http = $http; 
     }
-    //start-non-standard
+    //start-non-standard 
 
 
   register(form) {
-    this.submitted = true;
-    
-    if (form.$valid) {
+    this.submitted = true; 
+
+     if (form.$valid) {
       this.Auth.createUser({
           name: this.user.name,
-          ID: this.signID,
           city: this.user.city,
           college: this.user.college,
           mobile: this.user.mobile,

@@ -4,6 +4,23 @@
 
   class MainController {
    constructor($scope, Auth, $http, $cookies){
+
+      $scope.submit = function(){
+       
+       if(document.getElementById('upload').files.length > 0){
+
+          var id = $cookies.get('userId');
+          var file = document.getElementById('upload').files[0].name;
+
+          $http.put('api/users/accomRequest/'+ id, {name:file}).success(function(response){
+            $('#submit').click();
+          });
+        }
+
+       else
+        alert('No file has been uploaded');     
+      };
+       
        $scope.techotron = function(){
           open("http://www.techtrontechnologies.com/workshops@iit-madras.html");
        };
@@ -18,9 +35,16 @@
     
       function accomprompt(){
        if(Auth.isLoggedIn()){ 
+        
         if(!Auth.getCurrentUser().accomodation_interest){
           $('#accomprompt').modal('show');
         }
+
+        if(Auth.getCurrentUser().accomodation_interest == 'true'){
+         if(!Auth.getCurrentUser().accomodation_status) 
+          $('#accomRules').modal('show');
+        }
+       
        }
       };
 

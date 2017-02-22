@@ -77,14 +77,19 @@ export function create(req, res, next) {
   var newUser = new User(req.body);
   newUser.provider = 'local';
   newUser.role = 'user';
-  newUser.save()
+  User.count({role:'user'},function(err,count){
+     newUser.ID = "CC17" + (1000 + count + 1).toString().slice(1);
+
+     newUser.save()
     .then(function(user) {
       var token = jwt.sign({ _id: user._id }, config.secrets.session, {
         expiresIn: 60 * 60 * 5
       });
       res.json({ token });
     })
-    .catch(validationError(res));
+    .catch(validationError(res)); 
+  
+  });
 }
 
 /**

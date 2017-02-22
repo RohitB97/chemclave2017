@@ -5,19 +5,6 @@ class SettingsController {
   constructor(Auth,$scope) {
     this.Auth = Auth;
     $scope.CurrentUser = Auth.getCurrentUser;
-
-    $scope.submit = function(){
-       
-       if(document.getElementById('upload').files.length > 0){
-
-          var id = $cookies.get('userId');
-          var file = document.getElementById('upload').files[0].name;
-
-          $http.put('api/users/accomRequest/'+ id, {name:file}).success(function(response){
-            $('#submit').click();
-          });
-        }    
-      };
   }
 
   changePassword(form) {
