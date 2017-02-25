@@ -23,6 +23,7 @@ var router = new Router();
 router.get('/', auth.hasRole('admin'), controller.Index);
 router.get('/userCount', controller.userCount);
 router.get('/accommodations', controller.accommodations);
+router.get('/accomApproved', controller.accomApproved);
 router.get('/erp/finance', controller.accomodationIndex);
 router.delete('/:id', auth.hasRole('admin'), controller.destroy);
 router.get('/me', auth.isAuthenticated(), controller.me);

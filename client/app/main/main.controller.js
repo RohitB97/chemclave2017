@@ -41,7 +41,7 @@
         }
 
         if(Auth.getCurrentUser().accomodation_interest == 'true'){
-         if(!Auth.getCurrentUser().accomodation_status) 
+         if(!Auth.getCurrentUser().accomodation_status || Auth.getCurrentUser().accomodation_status=="Rejected") 
           $('#accomRules').modal('show');
         }
        
