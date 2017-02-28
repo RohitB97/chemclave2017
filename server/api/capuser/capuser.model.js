@@ -5,12 +5,11 @@ import mongoose from 'mongoose';
 var CapuserSchema = new mongoose.Schema({
   name: String,
   college: String,
-  department: String,
-  POR: String,
+  year: String,
   city: String,
   mobile: Number,
   email: String,
-  SOP: String,
+  address: String
 });
 
 export default mongoose.model('Capuser', CapuserSchema);

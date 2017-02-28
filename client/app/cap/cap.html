@@ -7,6 +7,9 @@
 <h1 class="heading">Ambassador</h1>
  <div class="container">
    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <button style="background:transparent;color:white;border:1px solid white;" class="btn btn-lg" data-toggle="modal" data-target="#capregister">Register as an Ambassador</button>
+   </div>
+   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <h3 style="text-align:center;">
     	A Chemclave Campus ambassador is the 'Face of Chemclave' in his college-exclusive handpicked students from different colleges across the country who helps students in their colleges to know about how they can live their dream careers through opportunities on chemclave.
     </h3>
@@ -73,3 +76,57 @@
    </div>
  </div>  
 </div>
+
+<div id="capregister" class="modal fade" style="z-index:9999;" tabindex="-1" role="dialog">
+ <div class="modal-dialog" role="document">
+  <div style="box-shadow:5px 5px 20px 10px #cc3921;" class="modal-content custom_modal">
+   <div class="modal-body">
+       <label>Name</label>  
+         <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span> 
+          <input style="background: transparent;color: white;" type="text" name="name" class="form-control" ng-model="capuser.name" required/>
+         </div><br>
+
+        <label>College</label>  
+         <div class="input-group">
+          <span class="input-group-addon"><span class="fa fa-university"></span></span> 
+          <input style="background: transparent;color: white;" type="text" name="college" class="form-control" ng-model="capuser.college" required/>
+         </div><br>
+
+        <label>Year</label>  
+         <div class="input-group">
+          <span class="input-group-addon"><span class="fa fa-university"></span></span> 
+          <input style="background: transparent;color: white;" type="text" name="year" class="form-control" ng-model="capuser.year" required/>
+         </div><br>
+
+        <label>Mobile No.</label>  
+         <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span> 
+          <input style="background: transparent;color: white;" type="text" name="mobile" class="form-control" ng-model="capuser.mobile" required/>
+         </div><br>
+
+        <label>City</label>  
+         <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span> 
+          <input style="background: transparent;color: white;" type="text" name="city" class="form-control" ng-model="capuser.city" required/>
+         </div><br>
+
+        <label>Address</label>  
+         <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span> 
+          <input style="background: transparent;color: white;" type="text" name="address" class="form-control" ng-model="capuser.address" required/>
+         </div><br>
+
+        <label>Email</label>  
+         <div class="input-group">
+          <span class="input-group-addon"><span class="fa fa-envelope"></span></span> 
+          <input style="background: transparent;color: white;" type="text" name="email" class="form-control" ng-model="capuser.email" required/>
+         </div><br> 
+   </div>
+     <div class="modal-footer">
+        <button style="background:transparent;color:white;border:1px solid white;"
+        ng-click="capregister()" data-dismiss="modal" class="btn">Register</button>
+     </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

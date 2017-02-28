@@ -3,8 +3,13 @@
 (function(){
 
 class CapComponent {
-  constructor() {
-    
+  constructor($scope, $http) {
+    $scope.capregister = function(){
+    	$http.post("api/capusers/", $scope.capuser).success(function(response){
+            alert("Thanks for registering !");
+            location.reload();
+    	});
+    };
   }
 }
 
