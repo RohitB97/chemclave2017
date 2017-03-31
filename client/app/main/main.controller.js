@@ -5,7 +5,7 @@
   class MainController {
    constructor($scope, Auth, $http, $cookies){
 
-      $scope.submit = function(){
+      /*$scope.submit = function(){
        
        if(document.getElementById('upload').files.length > 0){
 
@@ -19,32 +19,31 @@
 
        else
         alert('No file has been uploaded');     
-      };
+      };*/
        
        $scope.techotron = function(){
           open("http://www.techtrontechnologies.com/workshops@iit-madras.html");
        };
 
-      $scope.accomresult = function(key){
+      /*$scope.accomresult = function(key){
         var id = $cookies.get('userId');
         $http.put("api/users/interest/" + id,{value:key}).success(function(response){
             alert('Your response has been recorded !');
             location.reload();
          });
-      };
+      };*/
     
       function accomprompt(){
        if(Auth.isLoggedIn()){ 
-        
-        if(!Auth.getCurrentUser().accomodation_interest){
-          $('#accomprompt').modal('show');
-        }
+        if(!Auth.getCurrentUser().accomodation_status || Auth.getCurrentUser().accomodation_status!="Approved"){
 
-        if(Auth.getCurrentUser().accomodation_interest == 'true'){
-         if(!Auth.getCurrentUser().accomodation_status || Auth.getCurrentUser().accomodation_status=="Rejected") 
-          $('#accomRules').modal('show');
-        }
-       
+          alert("Accommodations are closed! Sorry for the inconvinience");
+
+        }         
+       }
+
+       else{
+         $('#paintevent').modal('show');
        }
       };
 
